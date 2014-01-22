@@ -1,0 +1,22 @@
+@mixin mq($point, $IE9: false, $query1: min, $query2: width) {
+	@if $IE9 == true{
+		// .lt-ie9 & {
+		// 	@content;
+		// }
+		// @media screen and (#{$query1}-#{$query2}: $point / $base-em +em) {
+		// 	@content;
+		// }
+	}
+
+	@else {
+		@media screen and (#{$query1}-#{$query2}: rem-calc($point)) {
+			@content;
+		}
+	}
+}
+
+@mixin clearfix {
+	*zoom:1;
+	&:before, &:after { content: " "; display: table; }
+	&:after { clear: both; }
+}

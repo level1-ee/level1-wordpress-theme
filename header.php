@@ -7,12 +7,22 @@
 
 	<?php wp_head(); ?>
 </head>
-<body>
-<div class="mega-wrap">
+<body <?php body_class(); ?>>
+
 <header class="main-header">
-	<button title="Open navigation" type="button" class="nav-btn">☰</button>
-	<img src="<?php echo get_template_directory_uri(); ?>/img/level1-logo.svg" class="logo" alt="Level1">
+	<a href="<?php echo get_site_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/level1-logo.svg" class="logo" alt="Level1"></a>
 </header>
+
+<button type="button" role="button" aria-label="Toggle Navigation" class="lines-button x nav-btn">
+	<span class="lines"></span>
+</button>
+
 <nav class="main-nav">
-	<a href="#" class="close-btn">Navigatsioon, mis võimaldab lisada ükskõik kui palju asju.</a>
+<!-- 	<ul>
+		<li>Uudis</li>
+		<li>Mängitud</li>
+		<li>Proovitud</li>
+		<li>Intervjuu</li>
+		<li>Arvamus</li>
+	</ul> -->
 </nav>

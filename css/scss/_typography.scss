@@ -1,6 +1,7 @@
 h1, h2, h3, h4, h5, h6 {
 	margin-bottom: .5em;
 	line-height: 1.1;
+	font-family: $ff-body;
 }
 
 p {
@@ -15,3 +16,4 @@ a {
 	.media__title {
 		font-size: rem-calc(30px);
 	}
+

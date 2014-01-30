@@ -6,7 +6,7 @@
 
 h1,h2,h3,h4,h5,h6,
 p,blockquote,pre,
-dl,dd,ol,ul,
+// dl,dd,ol,ul,
 form,fieldset,legend,
 table,th,td,caption,
 hr{
@@ -16,4 +16,6 @@ hr{
 
 img {
 	max-width: 100%;
+	height: auto;
 }
+

@@ -1,4 +1,1 @@
-/sftp-config.json
-
-/css/build/dev/global.css
-/css/build/prefixed/global.css
+/css/build/**

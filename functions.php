@@ -116,13 +116,13 @@ if ( is_admin_bar_showing() ) {
 // ==========================================================
 // # Custom image sizes
 // ==========================================================
-//
-// ## Post Thumbnails:
-//
-//		Aspect ratio: 16:9
-//		Hero sticky post image size: 1920x1080
-//		Grid post image size: 1067x600px
-//
+/*
+		## Post Thumbnails:
+
+		Aspect ratio: 16:9
+		Hero sticky post image size: 1920x1080
+		Grid post image size: 1067x600px
+*/
 // ----------------------------------------------------------
 
 	// add_image_size( 'sticky-featured-img', 1920, 1080);
@@ -199,56 +199,75 @@ function cleaner_caption( $output, $attr, $content ) {
 
 
 
-
-
-
-// ==========================================================
-// # Shortcodes
-// ==========================================================
-//
-//	1. Blockquote
-//
-//
-//
-//
-//
-// ----------------------------------------------------------
-
-//	1. Blockquote
+//	============================================
+//	# Fix shortcode empty <p> tags
 //	============================================
 
-function blockquote_shortcode($atts, $content = null) {
+add_filter("the_content", "the_content_filter");
+
+function the_content_filter($content) {
+
+	// array of custom shortcodes requiring the fix
+	$block = join("|",array("pull-quote"));
+
+	// opening tag
+	$rep = preg_replace("/(<p>)?\[($block)(\s[^\]]+)?\](<\/p>|<br \/>)?/","[$2$3]",$content);
+
+	// closing tag
+	$rep = preg_replace("/(<p>)?\[\/($block)](<\/p>|<br \/>)?/","[/$2]",$rep);
+
+	return $rep;
+
+}
+
+
+
+//	==========================================================
+//	# Shortcodes
+//	==========================================================
+/*
+		1. Pull quote
+
+
+
+*/
+// ----------------------------------------------------------
+
+//	1. Pull quote
+//	=========================================================
+/*
+
+		[pull-quote align="center/left/right"]...[/pull-quote]
+
+*/
+//	----------------------------------------------------------
+
+function pull_quote_shortcode($atts, $content = null) {
 // Attributes
 	extract( shortcode_atts(
 		array(
-			'label' => null,
-			'align' => 'left'
+			'align' => null
 		), $atts )
 	);
 
-	// Check if label attribute is empty
-	if($label == null){
-		$label_content = null;
-	} else {
-		$label_content = '<h3 class="module-title"><span>' . esc_attr($label) . '</span></h3>';
-	}
+	if($align == 'center'){
+		$align_content = 'pullquote--center';
 
-	// Check if align attribute is default (left)
-	if($align == 'left'){
-		$align_content = null;
+	} elseif($align == 'left') {
+		$align_content = 'pullquote--left';
 
-	} elseif($align == 'right'){
-		$align_content = 'content-aside--right';
+	} elseif($align == 'right') {
+		$align_content = 'pullquote--right';
 
 	} else {
 		$align_content = null;
+
 	}
 
-
-return '<aside class="content-aside ' . $align_content . '">'. $label_content .'' . $content . '</aside>';
-
+	return '<aside class="quote quote--pullquote '. $align_content .'"><blockquote>' . $content . '</blockquote></aside>';
 }
-add_shortcode( 'aside', 'blockquote_shortcode' );
+
+add_shortcode( 'pull-quote', 'pull_quote_shortcode' );
 
 
 

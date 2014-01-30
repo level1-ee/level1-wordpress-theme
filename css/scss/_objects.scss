@@ -1,0 +1,74 @@
+//	==========================================================
+//	# Pull Quote
+//	==========================================================
+/*
+
+		<aside class="quote quote--pullquote">
+			<blockquote>
+				...
+			</blockquote>
+		</aside>
+
+*/
+
+.quote {
+
+	blockquote,
+	blockquote p {
+		color: $brand-color;
+		font-size: rem-calc(25px);
+		line-height: 1.5;
+	}
+
+}
+
+	.quote--pullquote {
+		font-style: italic;
+		margin-top: 30px;
+		margin-bottom: 30px;
+
+		&:before {
+			border-top: 5px solid $brand-color;
+			content:'';
+			display: block;
+			width: 30%;
+			margin: 0 auto 20px;
+		}
+
+		&.pullquote--right,
+		&.pullquote--left {
+			&:before {
+				margin: 0 0 20px;
+			}
+		}
+	}
+
+		.pullquote--right {
+			float: right;
+			width: 40%;
+
+			margin-left: 2em;
+			margin-right: -150px;
+		}
+
+		.pullquote--left {
+			float: left;
+			width: 40%;
+
+			position: relative;
+
+			margin-left: -150px;
+			margin-right: 2em;
+
+		}
+
+		.pullquote--center {
+			text-align: center;
+
+			margin-left: -150px;
+			margin-right: -150px;
+			margin-top: 50px;
+			margin-bottom: 50px;
+		}
+
+

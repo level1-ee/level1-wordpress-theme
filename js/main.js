@@ -77,7 +77,7 @@ $menulink.funcToggle('click', function() {
 var divs = $('.featured__body ');
 $(window).on('scroll', function() {
    var st = $(this).scrollTop();
-   divs.css({ 'opacity' : (1 - st/140) });
+   divs.css({ 'opacity' : (1 - st/220) });
 });
 
 var anchor = document.querySelectorAll('button');

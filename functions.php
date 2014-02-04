@@ -208,7 +208,7 @@ add_filter("the_content", "the_content_filter");
 function the_content_filter($content) {
 
 	// array of custom shortcodes requiring the fix
-	$block = join("|",array("pull-quote"));
+	$block = join("|",array("pull-quote", "island"));
 
 	// opening tag
 	$rep = preg_replace("/(<p>)?\[($block)(\s[^\]]+)?\](<\/p>|<br \/>)?/","[$2$3]",$content);
@@ -227,7 +227,7 @@ function the_content_filter($content) {
 //	==========================================================
 /*
 		1. Pull quote
-
+		2. Island
 
 
 */
@@ -236,9 +236,7 @@ function the_content_filter($content) {
 //	1. Pull quote
 //	=========================================================
 /*
-
 		[pull-quote align="center/left/right"]...[/pull-quote]
-
 */
 //	----------------------------------------------------------
 
@@ -269,7 +267,19 @@ function pull_quote_shortcode($atts, $content = null) {
 
 add_shortcode( 'pull-quote', 'pull_quote_shortcode' );
 
+//	2. Island
+//	=========================================================
+/*
+		[island]...[/island]
+*/
+//	----------------------------------------------------------
 
+function island_shortcode($atts, $content = null) {
+
+return '<div class="content-island">' . $content . '</div>';
+
+}
+add_shortcode( 'island', 'island_shortcode' );
 
 
 

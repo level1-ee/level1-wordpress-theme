@@ -174,8 +174,9 @@ body {
 		margin-right: 40px;
 		color: darken($light, 30);
 		font-size: rem-calc(14px);
-		font-weight: $fw-light;
+		// font-weight: $fw-light;
 		line-height: 1.6;
+		// font-family: $ff-heading;
 	}
 
 	a {
@@ -518,6 +519,7 @@ $button-size : 20px;
 	}
 
 	.post-card__title {
+		font-family: $ff-body;
 		color: $light;
 		font-size: rem-calc(20px);
 		font-size: rem-calc(20px);
@@ -580,6 +582,7 @@ $button-size : 20px;
 }
 
 .post-meta-label {
+	font-family: $ff-heading;
 	border-radius: 1px;
 	background: rgba(black, 0.5);
 	color: $light;
@@ -848,7 +851,7 @@ color:#F00 !important;
 		margin-bottom: .2em;
 	}
 	p {
-		font-size: rem-calc(18px);
+		font-size: rem-calc(20px);
 		// font-family: Georgia;
 		margin-bottom: 1.1em;
 		line-height: 1.7;

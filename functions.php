@@ -15,7 +15,7 @@ function script_enqueuer() {
 	wp_register_script( 'main', get_template_directory_uri().'/js/main.js', array( 'jquery' ), '1.0' );
 	wp_enqueue_script( 'main' );
 
-	wp_register_style( 'fonts', 'http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic');
+	wp_register_style( 'fonts', 'http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic|Quattrocento+Sans:400,400italic,700');
 	wp_enqueue_style( 'fonts' );
 
 	wp_register_style( 'screen', get_template_directory_uri().'/css/build/prefixed/global.css', '', '', 'screen' );

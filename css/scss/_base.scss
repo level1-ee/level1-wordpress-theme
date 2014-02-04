@@ -84,20 +84,112 @@ body {
 	color: $light;
 	box-shadow: 4px 0 0 rgba($dark,.5);
 
-	ul {
-		padding: 0;
-		padding: 80px 30px;
-		list-style: none;
-	}
-	li {
-		padding: 0;
-		margin: 0;
-		line-height: 1.7;
-		font-size: rem-calc(20px);
-	}
 }
 
 
+.nav-section {
+	margin: 80px 0 0 0;
+
+	h3 {
+		font-size: rem-calc(12px);
+		font-weight: $fw-normal;
+		text-transform: uppercase;
+		color: darken($light, 60);
+		letter-spacing: 3px;
+		margin-left: 20px;
+	}
+
+	ul {
+		padding: 0;
+		list-style: none;
+	}
+
+	li {
+		padding: 0;
+		margin: 0;
+		line-height: 1.6;
+		font-size: rem-calc(20px);
+		a {
+			padding-left: 20px;
+			color: $light;
+		}
+	}
+
+	.nav-item {
+		position: relative;
+
+		&:hover:before {
+			width: 6px;
+		}
+
+
+		&:before {
+			transition: .1s;
+			content:'';
+			display: block;
+			width: 3px;
+			height: 90%;
+			position: absolute;
+			z-index: -10;
+		}
+	}
+
+	.nav-item--uudis {
+		&:before {
+			background-color: $cat-uudis-color;
+		}
+	}
+	.nav-item--mangitud {
+		&:before {
+			background-color: $cat-mangitud-color;
+		}
+	}
+	.nav-item--proovitud {
+		&:before {
+			background-color: $cat-proovitud-color;
+		}
+	}
+	.nav-item--intervjuu {
+		&:before {
+			background-color: $cat-intervjuu-color;
+		}
+	}
+	.nav-item--arvamus {
+		&:before {
+			background-color: $cat-arvamus-color;
+		}
+	}
+	.nav-item--varia {
+		&:before {
+			background-color: $cat-varia-color;
+		}
+	}
+}
+.nav-section--about {
+
+	margin-top: 50px;
+
+	p {
+		margin-left: 20px;
+		margin-right: 40px;
+		color: darken($light, 30);
+		font-size: rem-calc(14px);
+		font-weight: $fw-light;
+		line-height: 1.6;
+	}
+
+	a {
+		margin-left: 20px;
+		color: darken($light, 20);
+		font-size: rem-calc(14px);
+		margin-top: 10px;
+		display: block;
+
+		&:after {
+			content:' »';
+		}
+	}
+}
 
 $color : #ecf0f1;
 $transition: .3s;

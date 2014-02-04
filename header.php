@@ -18,11 +18,20 @@
 </button>
 
 <nav class="main-nav">
-<!-- 	<ul>
-		<li>Uudis</li>
-		<li>Mängitud</li>
-		<li>Proovitud</li>
-		<li>Intervjuu</li>
-		<li>Arvamus</li>
-	</ul> -->
+	<div class="nav-section">
+		<h3>Rubriigid</h3>
+		<ul>
+			<li class="nav-item nav-item--uudis"><a href="#">Uudis</a></li>
+			<li class="nav-item nav-item--mangitud"><a href="#">Mängitud</a></li>
+			<li class="nav-item nav-item--proovitud"><a href="#">Proovitud</a></li>
+			<li class="nav-item nav-item--intervjuu"><a href="#">Intervjuu</a></li>
+			<li class="nav-item nav-item--arvamus"><a href="#">Arvamus</a></li>
+			<li class="nav-item nav-item--varia"><a href="#">Varia</a></li>
+		</ul>
+	</div>
+	<div class="nav-section nav-section--about">
+		<h3>Level1</h3>
+		<p>… on videomängudele ja virtuaalsusele pühendatud veebileht, mille eesmärgiks on luua huvilistele võrgustik ning tutvustada vähemteadlikele videomänge kui positiivset ja arendavat, kultuuri ühte kiiremini kasvavat osa.</p>
+		<a href="#">Loe lähemalt</a>
+	</div>
 </nav>

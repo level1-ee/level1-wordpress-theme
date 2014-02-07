@@ -8,20 +8,49 @@ add_action( 'wp_enqueue_scripts', 'script_enqueuer' );
 
 function script_enqueuer() {
 
+	wp_register_script( 'mCustomScrollbar', get_template_directory_uri().'/js/plugins/jquery.mCustomScrollbar.min.js', array( 'jquery' ), '2.8.3' );
 
 	wp_register_script( 'magnific-popup', get_template_directory_uri().'/js/plugins/jquery.magnific-popup.min.js', array( 'jquery' ), '0.9.9' );
 	wp_enqueue_script( 'magnific-popup' );
 
-	wp_register_script( 'main', get_template_directory_uri().'/js/main.js', array( 'jquery' ), '1.0' );
+	wp_register_script( 'plugins', get_template_directory_uri().'/js/plugins.js', array( 'jquery' ), '1.0' );
+	wp_enqueue_script( 'plugins' );
+
+	wp_register_script( 'main', get_template_directory_uri().'/js/main.js', array( 'jquery', 'plugins' ), '1.0' );
 	wp_enqueue_script( 'main' );
 
-	wp_register_style( 'fonts', 'http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic|Quattrocento+Sans:400,400italic,700');
+
+	wp_register_style( 'fonts', 'http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic|Quattrocento+Sans:400,400italic,700,700italic');
 	wp_enqueue_style( 'fonts' );
 
 	wp_register_style( 'screen', get_template_directory_uri().'/css/build/prefixed/global.css', '', '', 'screen' );
 	wp_enqueue_style( 'screen' );
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //	============================================
 //	# Add editor style
@@ -55,6 +84,12 @@ function give_linked_images_class($html, $id, $caption, $title, $align, $url, $s
 add_filter('image_send_to_editor','give_linked_images_class',10,8);
 
 
+function add_class_attachment_link($html){
+    $postid = get_the_ID();
+    $html = str_replace('<a','<a class="gallery-img-link"',$html);
+    return $html;
+}
+add_filter('wp_get_attachment_link','add_class_attachment_link',10,1);
 
 
 // ==========================================================
@@ -275,11 +310,189 @@ add_shortcode( 'pull-quote', 'pull_quote_shortcode' );
 //	----------------------------------------------------------
 
 function island_shortcode($atts, $content = null) {
-
-return '<div class="content-island">' . $content . '</div>';
-
+	return '<div class="content-island">' . $content . '</div>';
 }
 add_shortcode( 'island', 'island_shortcode' );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//	3. Gallery shortcode override
+//	=========================================================
+/*
+		wp-includes/media.php
+*/
+//	----------------------------------------------------------
+
+add_shortcode('gallery', 'my_gallery_shortcode');
+
+/**
+ * The Gallery shortcode.
+ *
+ * This implements the functionality of the Gallery Shortcode for displaying
+ * WordPress images on a post.
+ *
+ * @since 2.5.0
+ *
+ * @param array $attr Attributes of the shortcode.
+ * @return string HTML content to display gallery.
+ */
+function my_gallery_shortcode($attr) {
+	$post = get_post();
+
+	static $instance = 0;
+	$instance++;
+
+	if ( ! empty( $attr['ids'] ) ) {
+		// 'ids' is explicitly ordered, unless you specify otherwise.
+		if ( empty( $attr['orderby'] ) )
+			$attr['orderby'] = 'post__in';
+		$attr['include'] = $attr['ids'];
+	}
+
+	// Allow plugins/themes to override the default gallery template.
+	$output = apply_filters('post_gallery', '', $attr);
+	if ( $output != '' )
+		return $output;
+
+	// We're trusting author input, so let's at least make sure it looks like a valid orderby statement
+	if ( isset( $attr['orderby'] ) ) {
+		$attr['orderby'] = sanitize_sql_orderby( $attr['orderby'] );
+		if ( !$attr['orderby'] )
+			unset( $attr['orderby'] );
+	}
+
+	extract(shortcode_atts(array(
+		'order'      => 'ASC',
+		'orderby'    => 'menu_order ID',
+		'id'         => $post ? $post->ID : 0,
+		'itemtag'    => 'dl',
+		'icontag'    => 'dt',
+		'captiontag' => 'dd',
+		'columns'    => 3,
+		'size'       => 'medium',
+		'include'    => '',
+		'exclude'    => '',
+		'link'       => ''
+	), $attr, 'gallery'));
+
+	$id = intval($id);
+	if ( 'RAND' == $order )
+		$orderby = 'none';
+
+	if ( !empty($include) ) {
+		$_attachments = get_posts( array('include' => $include, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby) );
+
+		$attachments = array();
+		foreach ( $_attachments as $key => $val ) {
+			$attachments[$val->ID] = $_attachments[$key];
+		}
+	} elseif ( !empty($exclude) ) {
+		$attachments = get_children( array('post_parent' => $id, 'exclude' => $exclude, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby) );
+	} else {
+		$attachments = get_children( array('post_parent' => $id, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby) );
+	}
+
+	if ( empty($attachments) )
+		return '';
+
+	if ( is_feed() ) {
+		$output = "\n";
+		foreach ( $attachments as $att_id => $attachment )
+			$output .= wp_get_attachment_link($att_id, $size, true) . "\n";
+		return $output;
+	}
+
+	$itemtag = tag_escape($itemtag);
+	$captiontag = tag_escape($captiontag);
+	$icontag = tag_escape($icontag);
+	$valid_tags = wp_kses_allowed_html( 'post' );
+	if ( ! isset( $valid_tags[ $itemtag ] ) )
+		$itemtag = 'dl';
+	if ( ! isset( $valid_tags[ $captiontag ] ) )
+		$captiontag = 'dd';
+	if ( ! isset( $valid_tags[ $icontag ] ) )
+		$icontag = 'dt';
+
+	$columns = intval($columns);
+	$itemwidth = $columns > 0 ? floor(100/$columns) : 100;
+	$float = is_rtl() ? 'right' : 'left';
+
+	$selector = "gallery-{$instance}";
+
+	$gallery_style = $gallery_div = '';
+	if ( apply_filters( 'use_default_gallery_style', true ) )
+		$gallery_style = "
+		<style type='text/css'>
+
+
+
+		</style>";
+	$size_class = sanitize_html_class( $size );
+
+
+
+
+	$gallery_div = "<div id='$selector' class='gallery galleryid-{$id} gallery-columns-{$columns} gallery-size-{$size_class}'>";
+	$output = apply_filters( 'gallery_style', $gallery_style . "\n\t\t" . $gallery_div );
+
+	$i = 0;
+	foreach ( $attachments as $id => $attachment ) {
+		if ( ! empty( $link ) && 'file' === $link )
+			$image_output = wp_get_attachment_link( $id, $size, false, false );
+		elseif ( ! empty( $link ) && 'none' === $link )
+			$image_output = wp_get_attachment_image( $id, $size, false );
+		else
+			$image_output = wp_get_attachment_link( $id, $size, true, false );
+
+		$image_meta  = wp_get_attachment_metadata( $id );
+
+		$orientation = '';
+		if ( isset( $image_meta['height'], $image_meta['width'] ) )
+			$orientation = ( $image_meta['height'] > $image_meta['width'] ) ? 'portrait' : 'landscape';
+
+		$output .= "<{$itemtag} class='gallery-item'>";
+		$output .= "
+			<{$icontag} class='gallery-icon {$orientation}'>
+				$image_output
+			</{$icontag}>";
+		if ( $captiontag && trim($attachment->post_excerpt) ) {
+			$output .= "
+				<{$captiontag} class='wp-caption-text gallery-caption'>
+				" . wptexturize($attachment->post_excerpt) . "
+				</{$captiontag}>";
+		}
+		$output .= "</{$itemtag}>";
+		// if ( $columns > 0 && ++$i % $columns == 0 )
+		// 	$output .= '<br style="clear: both" />';
+	}
+
+	$output .= "
+			<!-- <br style='clear: both;' /> -->
+		</div>\n";
+
+	return $output;
+}
+
+
+
 
 
 

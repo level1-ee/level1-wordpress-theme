@@ -1,5 +1,6 @@
 ::selection  {
-	background: rgba(magenta,.5);
+	background: rgba(darken(magenta, 5),.5);
+	text-shadow: 0 1px 0 darken(magenta, 2);
 	color: white;
 }
 html {
@@ -12,8 +13,9 @@ body {
 	background: $light;
 	color: $dark;
 
-	&.home {
-		background:black;
+	&.home,
+	&.archive {
+		background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAFklEQVQIHWNgwAGMgeIgzMCEQwFCGAAQ3gBppqhFdgAAAABJRU5ErkJggg=='),$dark;
 	}
 }
 
@@ -22,6 +24,14 @@ body {
 // ==========================================================
 
 .main-header {
+	@include clearfix();
+	position: fixed;
+
+	padding: 30px 0 20px;
+	top: 0;
+	width: 100%;
+	z-index: 20;
+
 	&:after {
 		display: block;
 		content:'';
@@ -32,13 +42,6 @@ body {
 		z-index: 20;
 		background: linear-gradient(to bottom, rgba(0,0,0,.80) 0%,rgba(0,0,0,0) 100%);
 	}
-	@include clearfix();
-	position: fixed;
-
-	padding: 30px 0 20px;
-	top: 0;
-	width: 100%;
-	z-index: 20;
 
 	.logo {
 		position: relative;
@@ -47,6 +50,8 @@ body {
 		width: 80px;
 		z-index: 25;
 	}
+
+
 }
 
 // ## Navigation
@@ -372,9 +377,14 @@ $button-size : 20px;
 
 .grid {
 	@include clearfix();
-	z-index: 10;
+	z-index: 11;
 	position: relative;
-	box-shadow: 0 -3px 0px 0px rgba(black, .5);
+	box-shadow: 0 -3px 0px 0px rgba(black, .5),
+							0 3px 0 0 rgba(black, .5);
+
+	.paged.blog & {
+		padding-top: 110px;
+	}
 }
 
 .post-card {
@@ -403,7 +413,7 @@ $button-size : 20px;
 		position: absolute;
 		right: 0;
 		top: 0;
-		background:black;
+		background:$dark;
 		box-shadow: -2px 2px 0 0 rgba(0, 0, 0, .2);
 
 		transition-property: border-width;
@@ -548,7 +558,7 @@ $button-size : 20px;
 
 		&:hover {
 
-			background: rgba(black, .3) !important;
+			// background: rgba($brand-color, .9) !important;
 
 
 		}
@@ -846,10 +856,11 @@ color:#F00 !important;
 	margin: 0 auto;
 
 	h1, h2, h3, h4 {
-		color: $brand-color;
+		color: darken($brand-color, 4);
 		line-height: 1.5;
 		margin-top: 1em;
 		margin-bottom: .2em;
+		text-shadow: 0 1px 0 darken(white, 2);
 
 		&:first-child {
 			margin-top: 0;
@@ -878,7 +889,8 @@ color:#F00 !important;
 	}
 
 	h2 {
-		font-size: rem-calc(35px);
+		font-size: rem-calc(41px);
+
 	}
 
 	.img-link {
@@ -887,20 +899,22 @@ color:#F00 !important;
 		cursor: zoom-in;
 	}
 
-	a {
-		color: #2858c0;
-		text-decoration: none;
+	p {
+		a {
+			color: #2858c0;
+			text-decoration: none;
 
-		&:visited {
+			&:visited {
 
-		}
-		&:focus {
-			outline: thin dotted;
-		}
-		&:active,
-		&:hover {
-			text-decoration: underline;
+			}
+			&:focus {
+				outline: thin dotted;
+			}
+			&:active,
+			&:hover {
+				text-decoration: underline;
 
+			}
 		}
 	}
 
@@ -1100,7 +1114,154 @@ img.alignnone {
 // ==========================================================
 
 .main-footer {
-	height: 200px;
+	height: 30px;
 	background: lighten($dark, 3);
 	border-top: 2px solid black;
 }
+
+
+
+// ==========================================================
+// # Gallery
+// ==========================================================
+
+/*Böö*/
+			.gallery {
+				margin-left: -100px;
+				margin-right:-100px;
+				margin-bottom: 30px;
+				margin-top: 20px;
+				overflow: auto;
+				// white-space: nowrap;
+				// text-align: center;
+				// max-height: 250px;
+			}
+			.gallery .gallery-item {
+				display: inline-block;
+				// float: left;
+				// margin-top: 10px;
+				// text-align: center;
+				margin-left: 5px;
+				margin-bottom: 0;
+
+				&:first-child {
+					margin-left: 0;
+				}
+			}
+			.gallery img {
+				height: 200px;
+				width: auto;
+			}
+			.gallery .gallery-caption {
+				margin-left: 0;
+				display:none;
+			}
+
+				.gallery-img-link {
+					cursor: -webkit-zoom-in;
+					cursor: -moz-zoom-in;
+					cursor: zoom-in;
+				}
+			/* see gallery_shortcode() in wp-includes/media.php */
+
+
+
+
+
+
+
+
+
+
+			.pagination {
+				text-align: center;
+				z-index: 10;
+				position: relative;
+				// border-bottom: 3px solid lighten($dark, 5);
+				// background:$dark;
+				@include clearfix();
+
+				a {
+					display: block;
+					float: left;
+					width: 50%;
+					background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAAD0lEQVQIHWNgwAL+Y4gBABIVAQCXC5RjAAAAAElFTkSuQmCC),
+											$dark;
+					color: darken($light, 20);
+					padding: 50px 0;
+					font-size: rem-calc(12px);
+					font-family: $ff-heading;
+					text-transform: uppercase;
+					font-weight: $fw-bold;
+					transition: .6s;
+					letter-spacing: 3px;
+
+					&:first-child {
+						border-right: 3px solid lighten($dark, 5);
+					}
+
+					&:hover {
+						background:$brand-color;
+						color:$light;
+					}
+				}
+			}
+
+
+
+	.index-header {
+		padding-top: 110px;
+		color: $light;
+		text-transform: uppercase;
+		font-size: rem-calc(45px);
+		text-align: center;
+		padding-bottom: 70px;
+
+		background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAFklEQVQIHWNgwAGMgeIgzMCEQwFCGAAQ3gBppqhFdgAAAABJRU5ErkJggg==')
+		, $cat-mangitud-color;
+
+
+	.category-arvamus & {
+		background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAFklEQVQIHWNgwAGMgeIgzMCEQwFCGAAQ3gBppqhFdgAAAABJRU5ErkJggg==')
+		, $cat-arvamus-color;
+	}
+	.category-mangitud & {
+		background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAFklEQVQIHWNgwAGMgeIgzMCEQwFCGAAQ3gBppqhFdgAAAABJRU5ErkJggg==')
+		, $cat-mangitud-color;
+	}
+	.category-proovitud & {
+		background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAFklEQVQIHWNgwAGMgeIgzMCEQwFCGAAQ3gBppqhFdgAAAABJRU5ErkJggg==')
+		, $cat-proovitud-color;
+	}
+	.category-intervjuu & {
+		background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAFklEQVQIHWNgwAGMgeIgzMCEQwFCGAAQ3gBppqhFdgAAAABJRU5ErkJggg==')
+		, $cat-intervjuu-color;
+	}
+	.category-uudis & {
+		background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAFklEQVQIHWNgwAGMgeIgzMCEQwFCGAAQ3gBppqhFdgAAAABJRU5ErkJggg==')
+		, $cat-uudis-color;
+	}
+	.category-varia & {
+		background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAFklEQVQIHWNgwAGMgeIgzMCEQwFCGAAQ3gBppqhFdgAAAABJRU5ErkJggg==')
+		, $cat-varia-color;
+	}
+
+
+
+
+		h1 {
+			text-shadow: 0 -1px 0 darken($dark, 100);
+			margin: 50px 0 0;
+			line-height: 1;
+			display: inline-block;
+			color: $dark;
+			text-transform: uppercase;
+		}
+
+		p {
+			letter-spacing: 3px;
+			font-size: rem-calc(20px);
+			color: lighten($dark, 0);
+			font-weight: $fw-bold;
+		}
+	}

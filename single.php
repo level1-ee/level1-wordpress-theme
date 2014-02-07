@@ -2,6 +2,13 @@
 
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
+<?php
+	if( has_shortcode( $post->post_content, 'gallery') ) {
+
+		get_template_part( 'partials/gallery-scripts' );
+
+} ?>
+
 <article>
 
 	<?php $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full'); ?>
@@ -61,6 +68,11 @@ if( $post->post_excerpt ) {
 		<?php the_content(); ?>
 </article>
 
+<div class="single-tags">
+	<?php the_tags('<ul><li>','</li><li>','</li></ul>'); ?>
+</div>
+
+
 <div class="single-footer">
 	<div class="comments-wrap">
 		<h3>Vestlus</h3>
@@ -86,6 +98,7 @@ if( $post->post_excerpt ) {
 
 <!-- post -->
 <?php endwhile; ?>
+	<?php get_template_part( 'partials/pagination-single' ); ?>
 <!-- post navigation -->
 <?php else: ?>
 <!-- no posts found -->

@@ -1,5 +1,7 @@
 <?php get_header(); ?>
 
+
+<?php if(is_home() && !is_paged()) { ?>
 <?php
 
 // Loop for one sticky post
@@ -23,13 +25,6 @@ $sticky_query = new WP_Query( array(
 	<article <?php post_class('featured-post'); ?> style="background-image: url('<?php echo $large_image_url[0]; ?>');">
 		<div class="featured__body">
 			<div class="featured__body-inner">
-
-
-
-
-
-
-
 
 
 				<div class="post-meta post-meta--featured">
@@ -97,12 +92,12 @@ if( $post->post_excerpt ) {
 	<p>Sorry, no posts matched your criteria.</p>
 
 <?php endif; ?>
-
+<?php } ?>
 
 <?php
 // Loop for posts without sticky flag
 
-$non_sticky_query = new WP_Query( array( 'post__not_in' => get_option( 'sticky_posts' ) ) ); ?>
+$non_sticky_query = new WP_Query( array( 'post__not_in' => get_option( 'sticky_posts' ), 'paged' => get_query_var('paged') ) ); ?>
 
 <?php if ( $non_sticky_query->have_posts() ) : ?>
 
@@ -190,6 +185,8 @@ $non_sticky_query = new WP_Query( array( 'post__not_in' => get_option( 'sticky_p
 <?php endwhile; ?>
 
 </section> <!-- .grid -->
+
+	<?php get_template_part( 'partials/pagination' ); ?>
 
 	<?php wp_reset_postdata(); // reset the query ?>
 	<!-- post navigation -->

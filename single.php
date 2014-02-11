@@ -13,7 +13,7 @@
 
 	<?php $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full'); ?>
 
-	<header <?php post_class('single-post-header'); ?> style="background-image: url('<?php echo $large_image_url[0]; ?>');">
+	<header <?php post_class('single-post-header lazy'); ?> data-original="<?php echo $large_image_url[0]; ?>" style="background-image: url('');">
 		<div class="single-post-header__body">
 			<div class="single-post-header__body-inner">
 

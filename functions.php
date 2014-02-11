@@ -10,6 +10,9 @@ function script_enqueuer() {
 
 	wp_register_script( 'mCustomScrollbar', get_template_directory_uri().'/js/plugins/jquery.mCustomScrollbar.min.js', array( 'jquery' ), '2.8.3' );
 
+	wp_register_script( 'lazyload', get_template_directory_uri().'/js/plugins/jquery.lazyload.min.js', array( 'jquery' ), '1.9.3' );
+	wp_enqueue_script( 'lazyload' );
+
 	wp_register_script( 'magnific-popup', get_template_directory_uri().'/js/plugins/jquery.magnific-popup.min.js', array( 'jquery' ), '0.9.9' );
 	wp_enqueue_script( 'magnific-popup' );
 
@@ -149,13 +152,20 @@ if ( is_admin_bar_showing() ) {
 	add_theme_support( 'post-thumbnails' );
 
 // ==========================================================
-// # Custom image sizes
+// # Image sizes
 // ==========================================================
 /*
+		Featured image aspect ratio is 16:9
+
+		Hero sticky post image uses full image that is uploaded and it needs to be 1920x1080 and optimized or the size of the image will blow up the internet.
+
+		## Default Image sizes from admin panel
+		Thumbnail: 300x300
+		Medium:    1280x720
+		Large:     1920x1080
+
 		## Post Thumbnails:
 
-		Aspect ratio: 16:9
-		Hero sticky post image size: 1920x1080
 		Grid post image size: 1067x600px
 */
 // ----------------------------------------------------------

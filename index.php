@@ -22,7 +22,7 @@ $sticky_query = new WP_Query( array(
 
 	<?php $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full'); ?>
 
-	<article <?php post_class('featured-post'); ?> style="background-image: url('<?php echo $large_image_url[0]; ?>');">
+	<article <?php post_class('featured-post lazy'); ?> data-original="<?php echo $large_image_url[0]; ?>" style="background-image:url('');">
 		<div class="featured__body">
 			<div class="featured__body-inner">
 
@@ -112,7 +112,7 @@ $non_sticky_query = new WP_Query( array( 'post__not_in' => get_option( 'sticky_p
 	<article <?php post_class('post-card'); ?>>
 		<div class="post-card__inner">
 			<?php if ( has_post_thumbnail()) { ?>
-			<img class="post-img" src="<?php echo $grid_image_url[0]; ?>" alt="" class="">
+			<img class="post-img lazy" src="<?php echo get_template_directory_uri(); ?>/img/default-post-thumb.png" data-original="<?php echo $grid_image_url[0]; ?>" width="1067" height="600" alt="">
 			<?php } else { ?>
 			<img class="post-img" src="<?php echo get_template_directory_uri(); ?>/img/default-post-thumb.png" alt="" class="">
 			<?php } ?>
@@ -196,6 +196,5 @@ $non_sticky_query = new WP_Query( array( 'post__not_in' => get_option( 'sticky_p
 	<p>Sorry, no posts matched your criteria.</p>
 
 <?php endif; ?>
-
 
 <?php get_footer(); ?>

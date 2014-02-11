@@ -2,8 +2,19 @@
 
 
 <div class="index-header">
-	<h1><?php single_cat_title(); ?></h1>
-	<p>Rubriik</p>
+	<?php if (is_author()) { ?>
+		<h1><?php the_author(); ?></h1>
+	<?php } else { ?>
+		<h1><?php single_cat_title(); ?></h1>
+	<?php } ?>
+
+	<?php if (is_tag()) { ?>
+			<p>Märksõna</p>
+	<?php } elseif (is_author()) { ?>
+			<p>Autor</p>
+	<?php } else { ?>
+			<p>Rubriik</p>
+	<?php } ?>
 </div>
 
 <?php if ( have_posts() ) : ?>

@@ -8,6 +8,14 @@
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=215235162000578";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 
 
@@ -27,6 +35,8 @@
 
 <nav class="main-nav">
 	<div class="nav-section">
+	<a href="<?php bloginfo('url'); ?>" class="go-home" title="Avalehele"><img src="<?php echo get_template_directory_uri(); ?>/img/home-icon.svg" alt=""></a>
+	<a href="https://www.facebook.com/level1.ee" class="fb-page-button" title="Facebooki lehekülg"><img src="<?php echo get_template_directory_uri(); ?>/img/fb-logo.svg" alt=""></a>
 		<h3>Rubriigid</h3>
 		<ul>
 			<li class="nav-item nav-item--uudis"><a href="<?php bloginfo('url' ); ?>/rubriik/uudis">Uudis</a></li>

@@ -51,7 +51,7 @@ $sticky_query = new WP_Query( array(
 					21</a>
 				</div> <!-- .post-meta--featured -->
 
-
+				<div class="featured-post-title">
 				<h2 class="featured__title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 				<?php
 if( $post->post_excerpt ) {
@@ -60,7 +60,7 @@ if( $post->post_excerpt ) {
 
 }
 ?>
-
+</div>
 				<div class="post-author post-author--featured">
 					<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>">
 						<img class="post-author__img" src="<?php echo get_wp_user_avatar_src($user_id, 'thumbnail'); ?>" alt="">

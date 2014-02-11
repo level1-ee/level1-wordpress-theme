@@ -8,10 +8,12 @@ jQuery(document).ready(function($) {
 var $menu = $('.main-nav'),
 		$menulink = $('.nav-btn'),
 		$closemenu = $('.close-btn'),
-		$menuabout = $('.nav-section--about').hide();
+		$menuabout = $('.nav-section--about').hide(),
+		$menuicons = $('.fb-page-button, .go-home').hide();
 
 $menulink.funcToggle('click', function() {
 	$menuabout.delay(300).fadeIn('slow');
+	$menuicons.delay(300).fadeIn('slow');
 	$menu.animate({width: 'toggle'}, 400, "easeInOutQuint");
 	$(this).toggleClass('close');
 	// return false;
@@ -19,6 +21,7 @@ $menulink.funcToggle('click', function() {
 }, function() {
 
 	$menuabout.fadeOut('fast');
+	$menuicons.fadeOut('fast');
 	$menu.animate({width: 'toggle'}, 400, "easeInOutQuint");
 	$(this).toggleClass('close');
 	// return false;
@@ -60,25 +63,25 @@ var anchor = document.querySelectorAll('button');
 
 $('.img-link').magnificPopup({
 	type: 'image',
-	mainClass: 'mfp-with-zoom', // this class is for CSS animation below
-	closeOnContentClick: true,
+	// mainClass: 'mfp-with-zoom', // this class is for CSS animation below
+	closeOnContentClick: true
 	// gallery:{
 	// 	enabled:true
 	// },
-	zoom: {
-		enabled: true, // By default it's false, so don't forget to enable it
-		duration: 300, // duration of the effect, in milliseconds
-		easing: 'ease-in-out', // CSS transition easing function
+	// zoom: {
+	// 	enabled: true, // By default it's false, so don't forget to enable it
+	// 	duration: 300, // duration of the effect, in milliseconds
+	// 	easing: 'ease-in-out', // CSS transition easing function
 
-		// The "opener" function should return the element from which popup will be zoomed in
-		// and to which popup will be scaled down
-		// By defailt it looks for an image tag:
-		opener: function(openerElement) {
-			// openerElement is the element on which popup was initialized, in this case its <a> tag
-			// you don't need to add "opener" option if this code matches your needs, it's defailt one.
-			return openerElement.is('img') ? openerElement : openerElement.find('img');
-		}
-	}
+	// 	// The "opener" function should return the element from which popup will be zoomed in
+	// 	// and to which popup will be scaled down
+	// 	// By defailt it looks for an image tag:
+	// 	opener: function(openerElement) {
+	// 		// openerElement is the element on which popup was initialized, in this case its <a> tag
+	// 		// you don't need to add "opener" option if this code matches your needs, it's defailt one.
+	// 		return openerElement.is('img') ? openerElement : openerElement.find('img');
+	// 	}
+	// }
 
 });
 

@@ -41,16 +41,17 @@
 					21</a>
 				</div> <!-- .post-meta--featured -->
 
+				<div class="single-post-title">
 				<h1 class="featured__title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 
 				<?php
 if( $post->post_excerpt ) {
-    echo '<p class="subtitle">'.get_the_excerpt().'</p>';
+		echo '<p class="subtitle">'.get_the_excerpt().'</p>';
 } else {
 
 }
 ?>
-
+</div>
 
 
 				<div class="post-author post-author--single">
@@ -60,39 +61,35 @@ if( $post->post_excerpt ) {
 					</a>
 				</div>
 
+				<div class="social-box">
+					<div class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div>
+				</div>
 
 			</div>
 		</div>
 	</header>
 	<div class="single-post-content">
 		<?php the_content(); ?>
+	</div>
 </article>
 
-<div class="single-tags">
-	<?php the_tags('<ul><li>','</li><li>','</li></ul>'); ?>
-</div>
 
 
 <div class="single-footer">
-	<div class="comments-wrap">
-		<h3>Vestlus</h3>
-		<div id="disqus_thread"></div>
-		<script type="text/javascript">
-				/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-				var disqus_shortname = 'level1-dev'; // required: replace example with your forum shortname
-
-				/* * * DON'T EDIT BELOW THIS LINE * * */
-				(function() {
-						var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-						dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-						(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-				})();
-		</script>
-		<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-		<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-	</div>
+<?php get_template_part('partials/comments'); ?>
 	<div class="related-posts">
+<?php
+$posttags = get_the_tags();
+if ($posttags) { ?>
+
+<div class="single-tags">
+	<h3>Märksõnad</h3>
+	<?php the_tags('<ul><li>','</li><li>','</li></ul>'); ?>
+</div>
+
+<?php } ?>
 		<h3>Samal teemal</h3>
+		<?php do_action('erp-show-related-posts', array('title'=>'', 'num_to_display'=>3, 'no_rp_text'=>'No Related Posts Found')); ?>
 	</div>
 </div>
 

@@ -1,22 +1,26 @@
-// $ff-heading: "Lato", sans-serif;
-// $ff-body: "Lato", serif;
-$ff-heading: "Source Sans Pro", sans-serif;
-$ff-body: "Quattrocento Sans", serif;
+// ==========================================================
+// # Typography
+// ==========================================================
 
-// $fw-thin: 100; // ?
-// $fw-light: 300;
+$ff-heading: "Source Sans Pro", "Helvetica Neue", Verdana, Arial, sans-serif;
+$ff-body: "Quattrocento Sans", "Helvetica Neue", Verdana, Arial, sans-serif;
+
 $fw-normal: 400;
 $fw-bold: 700;
-// $fw-ultrabold: 900; // ?
+
+
+// ==========================================================
+// # Colors
+// ==========================================================
 
 $light: #f1f1f1;
 $dark: #1F2328;
 
-$brand-color: darken(#e52645, 0);
+$brand-color: #e52645;
 
-$cat-mangitud-color:#ff3b2f;
-$cat-uudis-color:#e922ff;
-$cat-proovitud-color:#29cbcf;
-$cat-intervjuu-color:#bed435;
-$cat-arvamus-color:#ff1975;
-$cat-varia-color:#4A4A4A;
+$cat-mangitud-color: #ff3b2f;
+$cat-uudis-color: #e922ff;
+$cat-proovitud-color: #29cbcf;
+$cat-intervjuu-color: #bed435;
+$cat-arvamus-color: #ff1975;
+$cat-varia-color: #4A4A4A;

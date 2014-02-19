@@ -4,9 +4,7 @@
 
 <?php
 	if( has_shortcode( $post->post_content, 'gallery') ) {
-
 		get_template_part( 'partials/gallery-scripts' );
-
 } ?>
 
 <article>
@@ -33,26 +31,20 @@
 
 					<time class="post-meta-label post-meta-label--pubdate"><?php the_time('j.m.Y'); ?></time>
 
-					<a href="#0" class="post-meta-label post-meta-label--comments">
-						<svg class="comment-icon" width="68px" height="63px" viewBox="0 0 68 63" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-							<path class="svg-icon" d="M50.015,63.127 L37.93,45 L0,45 L0,0 L68,0 L68,45 L53.64,45 L50.015,63.127 L50.015,63.127 Z M4,41 L40.07,41 L47.985,52.873 L50.36,41 L64,41 L64,4 L4,4 L4,41 L4,41 Z" id="Shape" fill="#FFFFFF"></path>
-						</svg>
-
-					21</a>
+					<a href="<?php the_permalink(); ?>#disqus_thread" class="post-meta-label post-meta-label--comments"></a>
 				</div> <!-- .post-meta--featured -->
 
 				<div class="single-post-title">
-				<h1 class="featured__title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+					<h1 class="featured__title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 
-				<?php
-if( $post->post_excerpt ) {
-		echo '<p class="subtitle">'.get_the_excerpt().'</p>';
-} else {
+					<?php
+						if( $post->post_excerpt ) {
+								echo '<p class="subtitle">'.get_the_excerpt().'</p>';
+						} else {
 
-}
-?>
-</div>
-
+						}
+					?>
+				</div>
 
 				<div class="post-author post-author--single">
 					<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>">
@@ -73,24 +65,9 @@ if( $post->post_excerpt ) {
 	</div>
 </article>
 
-
-
-<div class="single-footer">
-<?php get_template_part('partials/comments'); ?>
-	<div class="related-posts">
-<?php
-$posttags = get_the_tags();
-if ($posttags) { ?>
-
-<div class="single-tags">
-	<h3>Märksõnad</h3>
-	<?php the_tags('<ul><li>','</li><li>','</li></ul>'); ?>
-</div>
-
-<?php } ?>
-		<h3>Samal teemal</h3>
-		<?php do_action('erp-show-related-posts', array('title'=>'', 'num_to_display'=>3, 'no_rp_text'=>'No Related Posts Found')); ?>
-	</div>
+<div class="single-post-footer">
+	<?php get_template_part('partials/comments'); ?>
+	<?php get_template_part('partials/related-posts-tags') ?>
 </div>
 
 <!-- post -->
@@ -100,10 +77,5 @@ if ($posttags) { ?>
 <?php else: ?>
 <!-- no posts found -->
 <?php endif; ?>
-
-
-
-
-
 
 <?php get_footer(); ?>

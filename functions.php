@@ -10,6 +10,9 @@ function script_enqueuer() {
 
 	wp_register_script( 'mCustomScrollbar', get_template_directory_uri().'/js/plugins/jquery.mCustomScrollbar.min.js', array( 'jquery' ), '2.8.3' );
 
+	wp_register_script( 'fitvids', get_template_directory_uri().'/js/plugins/jquery.fitvids.min.js', array( 'jquery' ), '1.0.3' );
+	wp_enqueue_script( 'fitvids' );
+
 	wp_register_script( 'lazyload', get_template_directory_uri().'/js/plugins/jquery.lazyload.min.js', array( 'jquery' ), '1.9.3' );
 	wp_enqueue_script( 'lazyload' );
 
@@ -157,12 +160,12 @@ if ( is_admin_bar_showing() ) {
 /*
 		Featured image aspect ratio is 16:9
 
-		Hero sticky post image uses full image that is uploaded and it needs to be 1920x1080 and optimized or the size of the image will blow up the internet.
+		Hero sticky post image uses full image that is uploaded and it needs to be **1920x1080** and optimized or the Internet will blow up (Or at least 16:9 ratio).
 
 		## Default Image sizes from admin panel
 		Thumbnail: 300x300
-		Medium:    1280x720
-		Large:     1920x1080
+		Medium:    640x360
+		Large:     1280x720
 
 		## Post Thumbnails:
 
@@ -339,11 +342,6 @@ add_shortcode( 'island', 'island_shortcode' );
 
 
 
-
-
-
-
-
 //	3. Gallery shortcode override
 //	=========================================================
 /*
@@ -397,7 +395,7 @@ function my_gallery_shortcode($attr) {
 		'icontag'    => 'dt',
 		'captiontag' => 'dd',
 		'columns'    => 3,
-		'size'       => 'medium',
+		'size'       => 'thumbnail',
 		'include'    => '',
 		'exclude'    => '',
 		'link'       => ''
@@ -500,6 +498,10 @@ function my_gallery_shortcode($attr) {
 
 	return $output;
 }
+
+
+
+
 
 
 

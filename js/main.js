@@ -1,10 +1,6 @@
-
-
-
 jQuery(document).ready(function($) {
-$(".lazy").lazyload({effect: "fadeIn"});
-
-
+	$(".lazy").lazyload({effect: "fadeIn"});
+	$(".single-post-content").fitVids();
 
 
 var $menu = $('.main-nav'),
@@ -18,14 +14,16 @@ $menulink.funcToggle('click', function() {
 	$menuicons.delay(300).fadeIn('slow');
 	$menu.animate({width: 'toggle'}, 400, "easeInOutQuint");
 	$(this).toggleClass('close');
+	$('.nav-btn-label').html('Sulge');
 	// return false;
 
 }, function() {
-
+	$('.nav-btn-label').html('Menüü');
 	$menuabout.fadeOut('fast');
 	$menuicons.fadeOut('fast');
 	$menu.animate({width: 'toggle'}, 400, "easeInOutQuint");
 	$(this).toggleClass('close');
+	// $('.nav-btn-label').show();
 	// return false;
 
 });

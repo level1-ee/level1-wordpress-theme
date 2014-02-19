@@ -81,14 +81,7 @@
 
 					<time class="post-meta-label post-meta-label--pubdate"><?php the_time('j.m.Y'); ?></time>
 
-					<a href="#0" class="post-meta-label post-meta-label--comments">
-
-						<svg class="comment-icon" width="68px" height="63px" viewBox="0 0 68 63" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-							<path class="svg-icon" d="M50.015,63.127 L37.93,45 L0,45 L0,0 L68,0 L68,45 L53.64,45 L50.015,63.127 L50.015,63.127 Z M4,41 L40.07,41 L47.985,52.873 L50.36,41 L64,41 L64,4 L4,4 L4,41 L4,41 Z" id="Shape" fill="#FFFFFF"></path>
-						</svg>
-
-
-					21</a>
+					<a href="<?php the_permalink(); ?>#disqus_thread" class="post-meta-label post-meta-label--comments"></a>
 				</div> <!-- .post-meta--card -->
 
 

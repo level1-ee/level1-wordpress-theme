@@ -1,19 +1,24 @@
-@mixin mq($point, $IE9: false, $query1: min, $query2: width) {
-	@if $IE9 == true{
-		// .lt-ie9 & {
-		// 	@content;
-		// }
-		// @media screen and (#{$query1}-#{$query2}: $point / $base-em +em) {
-		// 	@content;
-		// }
-	}
+// ==========================================================
+// # Media Query mixin
+// ==========================================================
+//
+// Depends on rem-calc function.
+//
+// @include mq(1024) {
+//   ...
+// }
+//
+// ----------------------------------------------------------
 
-	@else {
-		@media screen and (#{$query1}-#{$query2}: rem-calc($point)) {
-			@content;
-		}
+@mixin mq($point, $query1: min, $query2: width) {
+	@media screen and (#{$query1}-#{$query2}: rem-calc($point)) {
+		@content;
 	}
 }
+
+// ==========================================================
+// # Clearfix
+// ==========================================================
 
 @mixin clearfix {
 	*zoom:1;

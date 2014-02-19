@@ -1,3 +1,9 @@
+::selection  {
+	background: rgba(darken(magenta, 5),.5);
+	text-shadow: 0 1px 0 darken(magenta, 2);
+	color: white;
+}
+
 *, :before, :after {
 	-webkit-box-sizing: border-box;
 	   -moz-box-sizing: border-box;

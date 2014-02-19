@@ -1,0 +1,285 @@
+// ==========================================================
+// # Header
+// ==========================================================
+
+.main-header {
+	@include clearfix();
+	position: fixed;
+
+	padding: 30px 0 20px;
+	top: 0;
+	width: 100%;
+	z-index: 20;
+
+	&:after {
+		display: block;
+		content:'';
+		width: 100%;
+		position: absolute;
+		height: 110px;
+		top: 0;
+		z-index: 20;
+		background: linear-gradient(to bottom, rgba(0,0,0,.80) 0%,rgba(0,0,0,0) 100%);
+	}
+
+	.logo {
+		position: relative;
+		margin: 0 auto;
+		display: block;
+		width: 90px;
+		z-index: 25;
+	}
+}
+
+
+// ## Navigation
+// ==========================================================
+.go-home {
+	position: absolute;
+	top:20px;
+	right: 20px;
+
+	img {
+		width: 19px;
+	}
+}
+
+.fb-page-button {
+	position: absolute;
+	top:20px;
+	right: 50px;
+
+	img {
+		width: 17px;
+	}
+}
+
+.main-nav {
+	display: none;
+	width: 300px;
+	height: 100%;
+	background: rgba($dark, .96);
+	position: fixed;
+	z-index: 50;
+	color: $light;
+	box-shadow: 4px 0 0 rgba($dark,.5);
+}
+
+.nav-section {
+	margin: 80px 0 0 0;
+
+	h3 {
+		font-size: rem-calc(12px);
+		font-weight: $fw-normal;
+		text-transform: uppercase;
+		color: darken($light, 60);
+		letter-spacing: 3px;
+		margin-left: 20px;
+	}
+
+	ul {
+		padding: 0;
+		list-style: none;
+	}
+
+	li {
+		padding: 0;
+		margin: 0;
+		font-size: rem-calc(20px);
+		display: block;
+		padding-bottom: 6px;
+
+		a {
+			padding-left: 20px;
+			padding-right: 20px;
+			color: $light;
+			transition: .2s;
+			&:hover {
+				color: darken($light, 35);
+			}
+		}
+	}
+
+	.nav-item a {
+		position: relative;
+
+		&:hover:before {
+			width: 10px;
+		}
+
+		&:before {
+			transition: .2s;
+			content:'';
+			left: 0;
+			width: 3px;
+			height: 100%;
+			position: absolute;
+			z-index: -10;
+		}
+	}
+
+	.nav-item--uudis a {
+		&:before {
+			background-color: $cat-uudis-color;
+		}
+	}
+	.nav-item--mangitud a {
+		&:before {
+			background-color: $cat-mangitud-color;
+		}
+	}
+	.nav-item--proovitud a {
+		&:before {
+			background-color: $cat-proovitud-color;
+		}
+	}
+	.nav-item--intervjuu a {
+		&:before {
+			background-color: $cat-intervjuu-color;
+		}
+	}
+	.nav-item--arvamus a {
+		&:before {
+			background-color: $cat-arvamus-color;
+		}
+	}
+	.nav-item--varia a {
+		&:before {
+			background-color: $cat-varia-color;
+		}
+	}
+} //.nav-section
+
+.nav-section--about {
+	margin-top: 50px;
+
+	p {
+		margin-left: 20px;
+		margin-right: 40px;
+		color: darken($light, 30);
+		font-size: rem-calc(14px);
+		line-height: 1.6;
+	}
+
+	a {
+		margin-left: 20px;
+		color: darken($light, 35);
+		font-size: rem-calc(10px);
+		line-height: 1;
+		letter-spacing: 1px;
+		font-weight: $fw-bold;
+		margin-top: 10px;
+		display: inline-block;
+		padding: 5px 8px 2px 8px;
+		border: 1px solid lighten($dark, 20);
+		border-radius: 20px;
+		transition: .4s;
+
+		&:hover {
+			background:lighten($dark, 20);
+			color:darken($light, 0);
+		}
+	}
+} //.nav-section--about
+
+
+
+
+// ## Navigaton button
+// ==========================================================
+
+$nav-btn-color : #ecf0f1;
+$nav-btn-transition: .3s;
+$nav-btn-button-size : 20px;
+
+.nav-btn {
+	float: left;
+	margin-left: 30px;
+	margin-top: 25px;
+	position: fixed;
+	z-index: 200;
+	color: $light;
+	background: 0;
+	border: 0;
+	font-size: 20px;
+	padding: 0;
+	outline: none;
+	padding: $nav-btn-button-size/2 $nav-btn-button-size/4;
+	transition: .3s;
+	cursor: pointer;
+	user-select: none;
+	// border-radius: $nav-btn-button-size/7;
+
+	&:hover {
+		opacity: 1;
+	}
+	&:active {
+		transition: 0;
+	}
+
+	&.close {
+		margin-top: 5px;
+		margin-left: 10px;
+		transform: scale3d(.8,.8,.8);
+	}
+}
+
+.nav-btn-label {
+	text-transform: uppercase;
+	font-size: rem-calc(13px);
+	font-weight: $fw-bold;
+	font-family: $ff-heading;
+	top: 4px;
+	position: relative;
+	left: 10px;
+	color: rgba($light, .2);
+}
+
+.lines {
+	display: inline-block;
+	width: $nav-btn-button-size;
+	height: $nav-btn-button-size/7;
+	background: $nav-btn-color;
+	// border-radius: $nav-btn-button-size/14;
+	transition: $nav-btn-transition;
+	position: relative;
+
+	&:before, &:after {
+		display: inline-block;
+		width: $nav-btn-button-size;
+		height: $nav-btn-button-size/7;
+		background: $nav-btn-color;
+		// border-radius: $nav-btn-button-size/14;
+		transition: $nav-btn-transition;
+		position: absolute;
+		left:0;
+		content: '';
+		transform-origin: $nav-btn-button-size/14 center;
+	}
+
+	&:before {
+		top: $nav-btn-button-size/4;
+	}
+
+	&:after {
+		top: -$nav-btn-button-size/4;
+	}
+
+	.close & {
+		background: transparent;
+
+		&:before, &:after{
+			background-color: lighten($dark, 20%);
+			transform-origin: 50% 50%;
+			top:0;
+			width: $nav-btn-button-size;
+		}
+		&:before{
+			transform: rotate3d(0,0,1,45deg);
+		}
+		&:after{
+			transform: rotate3d(0,0,1,-45deg);
+		}
+	}
+} //.lines
+

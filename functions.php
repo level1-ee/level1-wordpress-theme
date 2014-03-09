@@ -26,7 +26,7 @@ function script_enqueuer() {
 	wp_enqueue_script( 'main' );
 
 
-	wp_register_style( 'fonts', 'http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic|Quattrocento+Sans:400,400italic,700,700italic');
+	wp_register_style( 'fonts', 'http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic,700italic');
 	wp_enqueue_style( 'fonts' );
 
 	wp_register_style( 'screen', get_template_directory_uri().'/css/build/prefixed/global.css', '', '', 'screen' );

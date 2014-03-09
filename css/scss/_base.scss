@@ -200,9 +200,10 @@ body {
 		}
 	}
 	p {
-		font-size: rem-calc(20px);
+		font-size: rem-calc(19px);
 		margin-bottom: 1.1em;
 		line-height: 1.7;
+		font-weight: $fw-normal;
 
 		&:last-child {
 			margin-bottom: 0;

@@ -26,28 +26,28 @@
 		content:'';
 	}
 
-
 .post-card {
-	float: left;
-	display: block;
+	// float: left;
+	// display: block;
 
-	height: auto;
+	// height: auto;
 	max-height: 270px;
+
 	overflow: hidden;
 	position: relative;
-	max-width: 100%;
 
-	@include mq(630) {
-		max-width: 50%;
-	}
-	@include mq(1000) {
-		max-width: 33.333333%;
-	}
 	// Corner transition
 	transition-property: border-width;
 	transition-duration: .25s;
 	transition-timing-function: cubic-bezier(.33, 0, .2, 1);
+	width: 100%;
 
+	@include mq(630) {
+		width: 50%;
+	}
+	@include mq(1000) {
+		width: 33.333333%;
+	}
 
 	// Corner
 	&:after {

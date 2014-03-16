@@ -28,8 +28,8 @@ function script_enqueuer() {
 
 	wp_register_style( 'fonts', 'http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic,700italic');
 	wp_enqueue_style( 'fonts' );
+	wp_register_style( 'screen', get_template_directory_uri().'/styles/css/global.css', '', '09032014', 'screen' );
 
-	wp_register_style( 'screen', get_template_directory_uri().'/css/build/prefixed/global.css', '', '', 'screen' );
 	wp_enqueue_style( 'screen' );
 
 }

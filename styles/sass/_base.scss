@@ -1,0 +1,268 @@
+body {}
+
+
+body.archive,
+body.search,
+body.home {
+	background-color: $color-darker;
+	background-image: url('../../img/single-post-bg.svg');
+	background-position: center;
+	background-attachment: fixed;
+}
+
+body.home .main-wrap {
+	padding-right: $sidebar-width;
+
+}
+
+
+.sidebar {
+	background-color: $color-dark;
+	width: $sidebar-width;
+	height: 100%;
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: 20;
+	border-left: 1px solid lighten(black,4);
+
+	.logo-box {
+		background-color: rgba($color-darker, .95);
+		text-align: center;
+		padding: 30px 0;
+		height: 215px;
+		position: absolute;
+		top:0;
+		right: 0;
+		width: 100%;
+		z-index: 100;
+		border-bottom: 1px solid black;
+	}
+
+	.logo {
+		display: block;
+		margin-bottom: 10px;
+	}
+
+	.slogan {
+		font-family: $ff-mono;
+		font-weight: $fw-regular;
+		color: $color-light;
+		text-transform: uppercase;
+		font-size: rem-calc(11);
+		letter-spacing: .15em;
+
+		span {
+			color: lighten($color-dark, 10);
+		}
+	}
+
+	.sponsor-box {
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		background-color: rgba($color-darker, .95);
+		border-top: 1px solid black;
+		color: $color-light;
+		text-align: center;
+		// height: 100px;
+
+		p {
+			font-size: rem-calc(9);
+			font-family: $ff-body;
+			color: $color-light;
+			font-weight: $fw-light;
+			text-transform: uppercase;
+			letter-spacing: .1em	;
+			margin-bottom: 5px;
+		}
+
+		a {
+			padding: 20px;
+			display: block;
+		}
+
+		img {
+			max-width: 40%;
+		}
+	}
+}
+
+
+
+
+
+.stream {
+	position: absolute;
+	overflow: auto;
+	height: 100%;
+
+	ul {
+		padding-top: 235px; // height of the .logo-box
+		// height: 100%;
+		list-style: none;
+		padding-left: 20px;
+		padding-right: 20px;
+		padding-bottom: 100px;
+
+	}
+
+	li {
+		font-family: $ff-body;
+		font-weight: $fw-light;
+		font-size: rem-calc(14);
+		// margin-bottom: 30px;
+		position: relative;
+
+		&:hover a {
+			color: $color-accent-1;
+			border-left: 1px solid rgba($color-light, .08);
+		}
+		&:hover .pub-date {
+			color: #fff;
+		}
+	}
+
+	a {
+		transition: .2s;
+		color: $color-light;
+		margin-left: 19px;
+		padding-left: 7px;
+		display: block;
+		border-left: 1px solid rgba($color-light, .02);
+		padding-bottom: 15px;
+		padding-top: 15px;
+
+	}
+
+	.pub-date {
+		transition: .5s;
+		position: absolute;
+		left: 0;
+		color: rgba($color-light, .2);
+		// border-right: 1px solid rgba($color-light, .02);
+		height: 100%;
+		padding-right: 7px;
+		font-family: $ff-mono;
+		font-size: rem-calc(12px);
+		top: 17px;
+
+
+		span {
+			display: block;
+		}
+	}
+}
+
+
+
+
+
+
+
+.main-content {
+	padding: (50px) 10px 10px 10px;
+}
+
+
+.module {
+	margin-bottom: 15px !important;
+}
+
+
+.module--post {
+
+}
+
+
+
+
+// .single-content {
+// 	max-width: 900px;
+// 	font-family: $ff-body;
+// 	font-weight: $fw-light;
+// 	margin: 0 auto;
+// 	padding-top: 150px;
+// 	font-size: rem-calc(20);
+// 	line-height: 1.8;
+// }
+
+
+
+
+.search-overlay {
+	background-color: rgba($color-darker, .95);
+	position: fixed;
+	top:0;
+	left:0;
+	width: 100%;
+	height: 100%;
+	z-index: 99999;
+	display: none;
+
+	padding: 50px 50px;
+
+	fieldset {
+		border:0;
+	}
+
+	.search-form__field {
+		width: 100%;
+		border:0;
+		outline:0;
+
+
+		margin-top: 200px;
+		color: $color-white;
+		font-size: rem-calc(100px);
+		font-family: $ff-heading;
+		font-weight: $fw-regular;
+		background-color: rgba(#fff,0);
+		text-align: center;
+	}
+
+	.close-search {
+		color: $color-light;
+		position: absolute;
+		top: 100px;
+		right: 100px;
+		background: transparent;
+		border:0;
+		font-size: rem-calc(50px);
+		font-family: $ff-body;
+		outline: none;
+
+		&:hover {
+			color: $color-accent-1;
+		}
+	}
+}
+
+.global-footer {
+	width: 100%;
+	background-color: rgba($color-darker,.8);
+	text-align: center;
+
+	padding: 50px;
+
+	margin-bottom: 20px;
+
+	p {
+		color: $color-light;
+		font-family: $ff-mono;
+	}
+
+	a {
+		font-size: rem-calc(40px);
+		font-family: $ff-heading;
+		font-weight: $fw-regular;
+		color: $color-light;
+		text-transform: uppercase;
+
+
+		&:hover {
+			background-color: $color-accent-1;
+			color: $color-dark;
+		}
+	}
+}

@@ -1,0 +1,30 @@
+* {
+  &,
+  &:before,
+  &:after {
+    box-sizing: border-box;
+  }
+}
+::selection {
+  background: $color-accent-1;
+  color: $color-dark;
+  text-shadow:none;
+}
+img, iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,h2,h3,h4,h5,h6,
+p,blockquote,pre,
+dl,dd,ol,ul,
+form,fieldset,legend,
+table,th,td,caption,
+hr{
+  margin:0;
+  padding:0;
+}

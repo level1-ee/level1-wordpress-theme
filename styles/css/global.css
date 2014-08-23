@@ -2079,9 +2079,15 @@ img.alignnone {
     font-family: 'League Gothic', Helvetica, sans-serif;
     text-transform: uppercase;
     font-weight: 400;
-    font-size: 8.125rem; }
+    font-size: 3.125rem; }
     .index-header h1 span {
       color: #f0f0f0; }
+    @media screen and (min-width: 48em) {
+      .index-header h1 {
+        font-size: 5.625rem; } }
+    @media screen and (min-width: 68.75em) {
+      .index-header h1 {
+        font-size: 8.125rem; } }
 
 .grid {
   display: -webkit-box;
@@ -2098,7 +2104,16 @@ img.alignnone {
           flex-wrap: wrap; }
 
 .grid-item {
-  width: 25%; }
+  width: 100%; }
+  @media screen and (min-width: 50em) {
+    .grid-item {
+      width: 50%; } }
+  @media screen and (min-width: 68.75em) {
+    .grid-item {
+      width: 33.3333%; } }
+  @media screen and (min-width: 90em) {
+    .grid-item {
+      width: 25%; } }
   .grid-item .grid-post {
     margin: 10px;
     height: 300px;

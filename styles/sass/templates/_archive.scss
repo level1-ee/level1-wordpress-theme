@@ -10,7 +10,15 @@
 		font-family: $ff-heading;
 		text-transform: uppercase;
 		font-weight: $fw-regular;
-		font-size: rem-calc(130px);
+		font-size: rem-calc(50px);
+
+		@include mq(768) {
+			font-size: rem-calc(90px);
+		}
+
+		@include mq(1100) {
+			font-size: rem-calc(130px);
+		}
 	}
 
 }
@@ -22,8 +30,21 @@
 }
 
 .grid-item {
-	width: 25%;
 
+	width: 100%;
+
+	@include mq(800) {
+		width: 50%;
+	}
+
+
+	@include mq(1100) {
+		width:33.3333%;
+	}
+
+	@include mq(1440) {
+		width: 25%;
+	}
 
   .grid-post {
   	margin: 10px;

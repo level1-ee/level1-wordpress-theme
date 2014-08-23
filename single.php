@@ -20,6 +20,9 @@
 		        }
 		    });
 			});
+
+
+
 		});
 
     (function($){
@@ -86,7 +89,7 @@
 
 		<?php the_content(); ?>
 	<div class="fb-button">
-		<div class="fb-like" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+		<div class="fb-like" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
 	</div>
 	</div> <!-- /.single-post-content -->
 </article>
@@ -137,9 +140,11 @@ wp_enqueue_script( 'fitvids' );
 ?>
 <script>
 jQuery(document).ready(function($) {
+
 	// With Vox media video embed
 	$(".single-post-content").fitVids({ customSelector: "iframe[src^='http://player.ooyala.com']"});
 });
 </script>
-
+<script src="<?php echo get_template_directory_uri(); ?>/js/vendor/min/viewport-units-buggyfill-min.js"></script>
+<script>window.viewportUnitsBuggyfill.init();</script>
 <?php get_footer(); ?>

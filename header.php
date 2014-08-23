@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title><?php wp_title(); ?></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/img/favicons/favicon.ico" type="image/x-icon" />
 	<!-- Apple Touch Icons -->
@@ -35,9 +36,13 @@
 <?php if ( is_user_logged_in() ) { ?>
 	<style type="text/css">
 		body.admin-bar .main-wrap,
-		body.admin-bar .main-nav-single
-		 {
+		body.admin-bar .top-header-single {
 			top: 32px;
+		}
+		@media screen and (max-width: 782px) {
+			body.admin-bar .top-header-single {
+				top: 46px;
+			}
 		}
 		body.admin-bar .sidebar .logo-box {
 			top: 15px;
@@ -51,9 +56,9 @@
 <div class="main-wrap">
 	<div class="nav-wrap">
 		<?php if ( is_front_page() ) {
-			get_template_part('partials/main-nav-home');
+			get_template_part('partials/top-header-home');
 		} else {
-			get_template_part('partials/main-nav-single');
+			get_template_part('partials/top-header-single');
 		} ?>
 	</div> <!-- /.nav-wrap -->
 

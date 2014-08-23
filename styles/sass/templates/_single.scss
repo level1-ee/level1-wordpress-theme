@@ -35,8 +35,17 @@
 	width: 100%;
 	// transform: translateY(-50%);
 	// top: 50%;
-	bottom: 50px;
 	// text-align: center;
+	padding: 0 20px;
+	bottom: 30px;
+
+	@include mq(500) {
+		bottom: 50px;
+
+		@include mq(600, max, height) {
+			bottom: 30px;
+		}
+	}
 }
 
 
@@ -48,9 +57,8 @@
 .single-post-header__title {
 	font-family: $ff-heading;
 	font-weight: $fw-regular;
-	font-size: rem-calc(90px);
 	line-height: 1;
-
+	font-size: rem-calc(35);
 	text-shadow: -2px 2px 2px rgba($color-dark, .7),
 							  0px 2px 2px rgba($color-dark, .7),
 							 -2px 0px 2px rgba($color-dark, .7);
@@ -58,6 +66,24 @@
 	text-transform: uppercase;
 	display: inline;
 	@include clearfix();
+
+
+	@include mq(500) {
+		font-size: rem-calc(50px);
+
+
+		@include mq(600, max, height) {
+			font-size: rem-calc(35px);
+		}
+	}
+
+	@include mq(768) {
+		font-size: rem-calc(90px);
+
+		@include mq(600, max, height) {
+			font-size: rem-calc(50px);
+		}
+	}
 
 	a {
 		color: #fff;
@@ -157,10 +183,14 @@
 	z-index: 20;
 	position: relative;
 	background: rgba(#fff, .95);
-	padding: 80px;
 	margin-top: 100vh;
 	top: -24px;
 	color: $color-dark;
+	padding: 50px 20px;
+
+	@include mq(880) {
+		padding: 80px 80px;
+	}
 
 	h1, h2, h3, h4 {
 		color: color-darken($color-dark, 4);
@@ -248,28 +278,38 @@
 p.single-post-content__excerpt {
 	margin-bottom: 1em;
 	color: $color-dark;
-	font-size: rem-calc(22);
-	line-height: 1.5;
-	// font-weight: $fw-bold;
+	font-weight: $fw-bold;
+	@include mq(600) {
+		line-height: 1.5;
+		font-weight: $fw-regular;
+		font-size: rem-calc(22);
+	}
 }
 
 
 .fluid-width-video-wrapper {
-		margin-left: -80px;
-		margin-right: -80px;
 		max-width: 900px;
 		width: auto !important;
 		margin-top: 50px;
 		margin-bottom: 50px;
+
+		@include mq(880) {
+			margin-left: -80px;
+			margin-right: -80px;
+		}
 }
 
 
 .wp-caption {
 	position: relative;
 
-	margin-top: 50px;
-	margin-bottom: 50px;
+	margin-top: 20px;
+	margin-bottom: 20px;
 
+	@include mq(600) {
+		margin-top: 50px;
+		margin-bottom: 50px;
+	}
 	img {
 		margin-top: 0px !important;
 		margin-bottom: 0px !important;
@@ -306,26 +346,34 @@ p.single-post-content__excerpt {
 .single-post-content img {
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 50px;
-	margin-bottom: 50px;
+	margin-top: 20px;
+	margin-bottom: 20px;
 	display: block;
+
+	@include mq(600) {
+		margin-top: 50px;
+		margin-bottom: 50px;
+	}
 }
 
 /* Images */
 .alignleft {
 
+	width: auto !important;
 	@include mq(768) {
 		float: left;
 	}
 }
 
 .alignright {
+		width: auto !important;
 	@include mq(768) {
 		float: right;
 	}
 }
 
 .aligncenter {
+		width: auto !important;
 	@include mq(768) {
 		display: block;
 		margin-left: auto;
@@ -336,31 +384,37 @@ p.single-post-content__excerpt {
 
 
 img.alignleft {
-	@include mq(768) {
+
+	width: auto !important;
+	@include mq(880) {
 		margin: 5px 1.5em 5px -80px;
 	}
 }
 
 .wp-caption.alignleft {
-	@include mq(768) {
+	width: auto !important;
+	@include mq(880) {
 		margin: 5px 1.5em 5px -80px;
 	}
 }
 
 img.alignright {
-	@include mq(768) {
+	width: auto !important;
+	@include mq(880) {
 		margin: 5px -80px 5px 1.5em;
 	}
 }
 
 .wp-caption.alignright {
-	@include mq(768) {
+	width: auto !important;
+	@include mq(880) {
 		margin: 5px -80px 5px 1.5em;
 	}
 }
 
 img.aligncenter {
-	@include mq(768) {
+	width: auto !important;
+	@include mq(880) {
 		margin-left: -80px;
 		margin-right: -80px;
 		max-width: 900px;
@@ -368,7 +422,8 @@ img.aligncenter {
 }
 
 .wp-caption.aligncenter {
-	@include mq(768) {
+	width: auto !important;
+	@include mq(880) {
 		margin-left: -80px;
 		margin-right: -80px;
 		max-width: 900px;
@@ -376,7 +431,8 @@ img.aligncenter {
 }
 
 .wp-caption.alignnone {
-	@include mq(768) {
+	width: auto !important;
+	@include mq(880) {
 		margin-left: -80px;
 		margin-right: -80px;
 		max-width: 900px;
@@ -397,8 +453,12 @@ img.alignnone {
 	z-index: 20;
 	position: relative;
 	background: rgba(#fff, .95);
-	padding: 80px;
 	color: $color-dark;
+	padding: 20px;
+
+	@include mq(880) {
+		padding: 80px;
+	}
 
 	.single-tags {
 		text-align: center;
@@ -416,6 +476,7 @@ img.alignnone {
 		li {
 			display: inline-block;
 			margin-right: 10px;
+			margin-bottom: 5px;
 
 			&:last-child {
 				margin-right: 0;

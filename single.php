@@ -137,7 +137,8 @@ wp_enqueue_script( 'fitvids' );
 ?>
 <script>
 jQuery(document).ready(function($) {
-	$(".single-post-content").fitVids();
+	// With Vox media video embed
+	$(".single-post-content").fitVids({ customSelector: "iframe[src^='http://player.ooyala.com']"});
 });
 </script>
 

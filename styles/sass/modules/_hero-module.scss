@@ -49,7 +49,7 @@
 		text-align: center;
 		text-transform: uppercase;
 		color: $color-light;
-		font-size: rem-calc(60px);
+		font-size: rem-calc(40px);
 		max-width: 90%;
 		margin: 0 auto;
 
@@ -61,6 +61,10 @@
 				color: darken($color-accent-1, 15);
 			}
 
+		@include mq(768) {
+			font-size: rem-calc(60);
+		}
+
 	}
 
 	.post-author {
@@ -71,7 +75,7 @@
 		color: $color-light;
 		font-size: rem-calc(14px);
 
-		letter-spacing: 1em;
+		letter-spacing: .5em;
 
 		display: inline-block;
 		text-align: center;
@@ -81,7 +85,9 @@
 		text-shadow: -1px 1px 1px rgba($color-dark, .7),
 								  0px 1px 1px rgba($color-dark, .7),
 								 -1px 0px 1px rgba($color-dark, .7);
-
+		@include mq(768) {
+			letter-spacing: 1em;
+		}
 		&:after {
 			content:'';
 			position: absolute;

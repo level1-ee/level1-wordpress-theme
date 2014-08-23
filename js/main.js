@@ -33,7 +33,7 @@ jQuery(document).ready(function($) {
 		$(this).children('.sub-menu').slideUp('fast');
 	});
 
-	$('.single-mobile-nav-wrapper .menu-item-has-children').click(function() {
+	$('.single-mobile-nav-wrapper .menu-item-has-children,.home-mobile-nav-wrapper .menu-item-has-children').click(function() {
 
 		$(this).toggleClass('active-mother');
 		$(this).children('.sub-menu').slideToggle('fast');

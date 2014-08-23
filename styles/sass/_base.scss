@@ -11,8 +11,9 @@ body.home {
 }
 
 body.home .main-wrap {
-	padding-right: $sidebar-width;
-
+	@include mq(1280) {
+		padding-right: $sidebar-width;
+	}
 }
 
 
@@ -25,6 +26,12 @@ body.home .main-wrap {
 	top: 0;
 	z-index: 20;
 	border-left: 1px solid lighten(black,4);
+	display: none;
+	z-index: 9999;
+
+	@include mq(1280) {
+		display: block;
+	}
 
 	.logo-box {
 		background-color: rgba($color-darker, .95);

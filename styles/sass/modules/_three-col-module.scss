@@ -6,12 +6,45 @@
 
 
 	.module--three-col__col {
-			width: 33.3333%;
+		width: 100%;
 
-		padding-right: 15px;
+
+		@include mq(800) {
+			width:50%;
+		}
+
+		@include mq(1100) {
+			width: 33.3333%;
+		}
+
+		@include mq(800) {
+			padding-right: 15px;
+		}
+
+		&:nth-child(1) {
+			margin-bottom: 10px;
+			@include mq(800) {
+				margin-bottom: 0;
+			}
+		}
+
+		&:nth-child(2) {
+			padding-right: 0px;
+
+			@include mq(1110) {
+				padding-right: 15px;
+			}
+		}
 
 		&:last-child {
 			padding-right: 0;
+			width: 100%;
+			margin-top: 10px;
+
+			@include mq(1100) {
+				margin-top: 0;
+				width: 33.3333%;
+			}
 		}
 	}
 

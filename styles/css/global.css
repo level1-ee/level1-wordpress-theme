@@ -2730,7 +2730,10 @@ body.archive, body.search, body.home {
   height: 100%;
   z-index: 99999;
   display: none;
-  padding: 50px 50px; }
+  padding: 20px; }
+  @media screen and (min-width: 56.25em) {
+    .search-overlay {
+      padding: 50px 50px; } }
   .search-overlay fieldset {
     border: 0; }
   .search-overlay .search-form__field {
@@ -2739,16 +2742,19 @@ body.archive, body.search, body.home {
     outline: 0;
     margin-top: 200px;
     color: #fff;
-    font-size: 6.25rem;
+    font-size: 3.125rem;
     font-family: 'League Gothic', Helvetica, sans-serif;
     font-weight: 400;
     background-color: rgba(255, 255, 255, 0);
     text-align: center; }
+    @media screen and (min-width: 56.25em) {
+      .search-overlay .search-form__field {
+        font-size: 6.25rem; } }
   .search-overlay .close-search {
     color: #f0f0f0;
     position: absolute;
-    top: 100px;
-    right: 100px;
+    top: 20px;
+    right: 20px;
     background: transparent;
     border: 0;
     font-size: 3.125rem;
@@ -2756,6 +2762,10 @@ body.archive, body.search, body.home {
     outline: none; }
     .search-overlay .close-search:hover {
       color: #27ffd4; }
+    @media screen and (min-width: 56.25em) {
+      .search-overlay .close-search {
+        top: 100px;
+        right: 100px; } }
 
 .global-footer {
   width: 100%;

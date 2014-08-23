@@ -207,7 +207,10 @@ body.home .main-wrap {
 	z-index: 99999;
 	display: none;
 
-	padding: 50px 50px;
+	padding: 20px;
+	@include mq(900) {
+		padding: 50px 50px;
+	}
 
 	fieldset {
 		border:0;
@@ -221,18 +224,22 @@ body.home .main-wrap {
 
 		margin-top: 200px;
 		color: $color-white;
-		font-size: rem-calc(100px);
+		font-size: rem-calc(50px);
 		font-family: $ff-heading;
 		font-weight: $fw-regular;
 		background-color: rgba(#fff,0);
 		text-align: center;
+
+		@include mq(900) {
+			font-size: rem-calc(100px);
+		}
 	}
 
 	.close-search {
 		color: $color-light;
 		position: absolute;
-		top: 100px;
-		right: 100px;
+		top: 20px;
+		right: 20px;
 		background: transparent;
 		border:0;
 		font-size: rem-calc(50px);
@@ -241,6 +248,11 @@ body.home .main-wrap {
 
 		&:hover {
 			color: $color-accent-1;
+		}
+
+		@include mq(900) {
+			top: 100px;
+			right: 100px;
 		}
 	}
 }

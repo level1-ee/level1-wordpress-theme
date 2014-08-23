@@ -10,9 +10,6 @@
 
 
 <svg width="176px" height="129px" viewBox="0 0 176 129" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-    <!-- Generator: Sketch 3.0.4 (8054) - http://www.bohemiancoding.com/sketch -->
-    <title>Untitled-1 copy + Shape 2</title>
-    <desc>Created with Sketch.</desc>
     <defs>
         <linearGradient x1="77.5305966%" y1="150.133602%" x2="-72.981264%" y2="44.899773%" id="linearGradient-1">
             <stop stop-color="#000000" offset="0%"></stop>

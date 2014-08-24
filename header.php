@@ -36,11 +36,14 @@
 <?php if ( is_user_logged_in() ) { ?>
 	<style type="text/css">
 		body.admin-bar .main-wrap,
-		body.admin-bar .top-header-single {
+		body.admin-bar .top-header-single,
+		body.admin-bar .top-header-home
+		 {
 			top: 32px;
 		}
 		@media screen and (max-width: 782px) {
-			body.admin-bar .top-header-single {
+			body.admin-bar .top-header-single,
+			body.admin-bar .top-header-home {
 				top: 46px;
 			}
 		}

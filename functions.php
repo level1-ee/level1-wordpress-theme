@@ -20,7 +20,7 @@ function script_enqueuer() {
 	wp_register_script( 'main', get_template_directory_uri().'/js/min/main-min.js', array( 'jquery', 'mCustomScrollbar', 'scrollbar' ), '1.0' );
 
 
-	wp_register_style( 'fonts', 'http://fonts.googleapis.com/css?family=Inconsolata:400,700|Fira+Sans:400,700,400italic,700italic&subset=latin,latin-ext');
+	wp_register_style( 'fonts', 'http://fonts.googleapis.com/css?family=Inconsolata:400,700&subset=latin,latin-ext');
 
 	wp_register_style( 'screen', get_template_directory_uri().'/styles/css/global.css', '', '17082014', 'screen' );
 

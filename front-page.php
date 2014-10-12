@@ -1,7 +1,21 @@
 <?php get_header(); ?>
 
 	<main class="main-content">
-
+	<div class="index-events">
+		<div class="moo-wrap">
+			<a href="http://mangudeoo.ee" target="_blank" class="index-events__moo">
+				<img src="<?php echo get_template_directory_uri(); ?>/img/events/moo.png" alt="MängudeÖÖ">
+			</a>
+		</div>
+		<div class="sub-event-wrap">
+			<a href="http://level1.ee/minecrafti-voistlus" target="_blank" class="sub-event sub-event--minecraft">
+				<img src="<?php echo get_template_directory_uri(); ?>/img/events/minecraft.png" alt="Minecrafti Arhietektuurivõistlus">
+			</a>
+			<a href="http://level1.ee/sinu-pikslitomme" target="_blank" class="sub-event sub-event--pikslitomme">
+				<img src="<?php echo get_template_directory_uri(); ?>/img/events/sinu-pikslitomme.jpg" alt="Sinu Pikslitõmme">
+			</a>
+		</div>
+	</div>
 <?php
 
 // check if the flexible content field has rows of data

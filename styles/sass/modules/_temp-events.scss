@@ -1,0 +1,32 @@
+.index-events {
+	margin-top: 40px;
+
+	.moo-wrap {
+		@include clearfix();
+		margin-bottom: 40px;
+
+	}
+
+	&__moo {
+		margin: 0 auto;
+		display: block;
+		max-width: 700px;
+	}
+
+	.sub-event-wrap {
+		@include clearfix();
+		display: flex;
+		flex-direction: row;
+		margin-bottom: 15px;
+	}
+
+	.sub-event {
+		max-width: 50%;
+		margin-right: 15px;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+}

@@ -2593,38 +2593,6 @@ p.no-search-results {
     cursor: -webkit-zoom-in;
     cursor: zoom-in; }
 
-.index-events {
-  margin-top: 40px; }
-  .index-events .moo-wrap {
-    margin-bottom: 40px; }
-    .index-events .moo-wrap:before, .index-events .moo-wrap:after {
-      content: " ";
-      display: table; }
-    .index-events .moo-wrap:after {
-      clear: both; }
-  .index-events__moo {
-    margin: 0 auto;
-    display: block;
-    max-width: 700px; }
-  .index-events .sub-event-wrap {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-flex-direction: row;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    margin-bottom: 15px; }
-    .index-events .sub-event-wrap:before, .index-events .sub-event-wrap:after {
-      content: " ";
-      display: table; }
-    .index-events .sub-event-wrap:after {
-      clear: both; }
-  .index-events .sub-event {
-    max-width: 50%;
-    margin-right: 15px; }
-    .index-events .sub-event:last-child {
-      margin-right: 0; }
-
 body.archive, body.search, body.home {
   background-color: #161616;
   background-image: url('../../img/single-post-bg.svg');

@@ -1,6 +1,20 @@
 <?php get_header(); ?>
 
 	<main class="main-content">
+
+	<div class="index-additions">
+		<div class="index-additions__item index-additions__item__player2">
+			<a href="http://level1.ee/player2/" target="_blank">
+				<img src="<?php echo get_template_directory_uri(); ?>/img/temp-index-player2.png" alt="Player2">
+			</a>
+		</div>
+		<div class="index-additions__item index-additions__item__2014">
+			<a href="http://level1.ee/level2014/" target="_blank">
+				<img src="<?php echo get_template_directory_uri(); ?>/img/temp-index-level2014.png" alt="Level2014">
+			</a>
+		</div>
+	</div>
+
 <?php
 
 // check if the flexible content field has rows of data

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*------------------------------------*\
 		# Colors
 \*------------------------------------*/
@@ -108,7 +109,8 @@ y-axis
   right: -26px; }
 
 /* scrollbar position: outside */
-.mCS-dir-rtl > .mCSB_inside > .mCSB_scrollTools, .mCS-dir-rtl > .mCSB_outside + .mCSB_scrollTools {
+.mCS-dir-rtl > .mCSB_inside > .mCSB_scrollTools,
+.mCS-dir-rtl > .mCSB_outside + .mCSB_scrollTools {
   /* RTL direction/left-side scrollbar */
   right: auto;
   left: 0; }
@@ -152,15 +154,18 @@ y-axis
   border-radius: 16px;
   text-align: center; }
 
-.mCSB_scrollTools_vertical.mCSB_scrollTools_onDrag_expand .mCSB_dragger.mCSB_dragger_onDrag_expanded .mCSB_dragger_bar, .mCSB_scrollTools_vertical.mCSB_scrollTools_onDrag_expand .mCSB_draggerContainer:hover .mCSB_dragger .mCSB_dragger_bar {
+.mCSB_scrollTools_vertical.mCSB_scrollTools_onDrag_expand .mCSB_dragger.mCSB_dragger_onDrag_expanded .mCSB_dragger_bar,
+.mCSB_scrollTools_vertical.mCSB_scrollTools_onDrag_expand .mCSB_draggerContainer:hover .mCSB_dragger .mCSB_dragger_bar {
   width: 12px;
   /* auto-expanded scrollbar */ }
 
-.mCSB_scrollTools_vertical.mCSB_scrollTools_onDrag_expand .mCSB_dragger.mCSB_dragger_onDrag_expanded + .mCSB_draggerRail, .mCSB_scrollTools_vertical.mCSB_scrollTools_onDrag_expand .mCSB_draggerContainer:hover .mCSB_draggerRail {
+.mCSB_scrollTools_vertical.mCSB_scrollTools_onDrag_expand .mCSB_dragger.mCSB_dragger_onDrag_expanded + .mCSB_draggerRail,
+.mCSB_scrollTools_vertical.mCSB_scrollTools_onDrag_expand .mCSB_draggerContainer:hover .mCSB_draggerRail {
   width: 8px;
   /* auto-expanded scrollbar */ }
 
-.mCSB_scrollTools .mCSB_buttonUp, .mCSB_scrollTools .mCSB_buttonDown {
+.mCSB_scrollTools .mCSB_buttonUp,
+.mCSB_scrollTools .mCSB_buttonDown {
   display: block;
   position: absolute;
   height: 20px;
@@ -197,7 +202,8 @@ x-axis
   bottom: 0;
   left: 0; }
 
-.mCustomScrollBox + .mCSB_scrollTools.mCSB_scrollTools_horizontal, .mCustomScrollBox + .mCSB_scrollTools + .mCSB_scrollTools.mCSB_scrollTools_horizontal {
+.mCustomScrollBox + .mCSB_scrollTools.mCSB_scrollTools_horizontal,
+.mCustomScrollBox + .mCSB_scrollTools + .mCSB_scrollTools.mCSB_scrollTools_horizontal {
   bottom: -26px; }
 
 /* scrollbar position: outside */
@@ -220,17 +226,20 @@ x-axis
   height: 4px;
   margin: 6px auto; }
 
-.mCSB_scrollTools_horizontal.mCSB_scrollTools_onDrag_expand .mCSB_dragger.mCSB_dragger_onDrag_expanded .mCSB_dragger_bar, .mCSB_scrollTools_horizontal.mCSB_scrollTools_onDrag_expand .mCSB_draggerContainer:hover .mCSB_dragger .mCSB_dragger_bar {
+.mCSB_scrollTools_horizontal.mCSB_scrollTools_onDrag_expand .mCSB_dragger.mCSB_dragger_onDrag_expanded .mCSB_dragger_bar,
+.mCSB_scrollTools_horizontal.mCSB_scrollTools_onDrag_expand .mCSB_draggerContainer:hover .mCSB_dragger .mCSB_dragger_bar {
   height: 12px;
   /* auto-expanded scrollbar */
   margin: 2px auto; }
 
-.mCSB_scrollTools_horizontal.mCSB_scrollTools_onDrag_expand .mCSB_dragger.mCSB_dragger_onDrag_expanded + .mCSB_draggerRail, .mCSB_scrollTools_horizontal.mCSB_scrollTools_onDrag_expand .mCSB_draggerContainer:hover .mCSB_draggerRail {
+.mCSB_scrollTools_horizontal.mCSB_scrollTools_onDrag_expand .mCSB_dragger.mCSB_dragger_onDrag_expanded + .mCSB_draggerRail,
+.mCSB_scrollTools_horizontal.mCSB_scrollTools_onDrag_expand .mCSB_draggerContainer:hover .mCSB_draggerRail {
   height: 8px;
   /* auto-expanded scrollbar */
   margin: 4px 0; }
 
-.mCSB_scrollTools.mCSB_scrollTools_horizontal .mCSB_buttonLeft, .mCSB_scrollTools.mCSB_scrollTools_horizontal .mCSB_buttonRight {
+.mCSB_scrollTools.mCSB_scrollTools_horizontal .mCSB_buttonLeft,
+.mCSB_scrollTools.mCSB_scrollTools_horizontal .mCSB_buttonRight {
   display: block;
   position: absolute;
   width: 20px;
@@ -278,7 +287,8 @@ yx-axis
   bottom: 0; }
 
 /* non-visible vertical scrollbar/RTL direction/left-side scrollbar */
-.mCSB_container_wrapper.mCS_no_scrollbar_y.mCS_y_hidden + .mCSB_scrollTools ~ .mCSB_scrollTools.mCSB_scrollTools_horizontal, .mCS-dir-rtl > .mCustomScrollBox.mCSB_vertical_horizontal.mCSB_inside > .mCSB_scrollTools.mCSB_scrollTools_horizontal {
+.mCSB_container_wrapper.mCS_no_scrollbar_y.mCS_y_hidden + .mCSB_scrollTools ~ .mCSB_scrollTools.mCSB_scrollTools_horizontal,
+.mCS-dir-rtl > .mCustomScrollBox.mCSB_vertical_horizontal.mCSB_inside > .mCSB_scrollTools.mCSB_scrollTools_horizontal {
   right: 0; }
 
 /* RTL direction/left-side scrollbar */
@@ -318,13 +328,21 @@ yx-axis
 5. TRANSITIONS
 ------------------------------------------------------------------------------------------------------------------------
 */
-.mCSB_scrollTools, .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar, .mCSB_scrollTools .mCSB_buttonUp, .mCSB_scrollTools .mCSB_buttonDown, .mCSB_scrollTools .mCSB_buttonLeft, .mCSB_scrollTools .mCSB_buttonRight {
-  -webkit-transition: opacity 0.2s ease-in-out, background-color 0.2s ease-in-out;
-  transition: opacity 0.2s ease-in-out, background-color 0.2s ease-in-out; }
+.mCSB_scrollTools,
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar,
+.mCSB_scrollTools .mCSB_buttonUp,
+.mCSB_scrollTools .mCSB_buttonDown,
+.mCSB_scrollTools .mCSB_buttonLeft,
+.mCSB_scrollTools .mCSB_buttonRight {
+  -webkit-transition: opacity .2s ease-in-out, background-color .2s ease-in-out;
+  transition: opacity .2s ease-in-out, background-color .2s ease-in-out; }
 
-.mCSB_scrollTools_vertical.mCSB_scrollTools_onDrag_expand .mCSB_dragger_bar, .mCSB_scrollTools_vertical.mCSB_scrollTools_onDrag_expand .mCSB_draggerRail, .mCSB_scrollTools_horizontal.mCSB_scrollTools_onDrag_expand .mCSB_dragger_bar, .mCSB_scrollTools_horizontal.mCSB_scrollTools_onDrag_expand .mCSB_draggerRail {
-  -webkit-transition: width 0.2s ease-out 0.2s, height 0.2s ease-out 0.2s, margin-left 0.2s ease-out 0.2s, margin-right 0.2s ease-out 0.2s, margin-top 0.2s ease-out 0.2s, margin-bottom 0.2s ease-out 0.2s, opacity 0.2s ease-in-out, background-color 0.2s ease-in-out;
-  transition: width 0.2s ease-out 0.2s, height 0.2s ease-out 0.2s, margin-left 0.2s ease-out 0.2s, margin-right 0.2s ease-out 0.2s, margin-top 0.2s ease-out 0.2s, margin-bottom 0.2s ease-out 0.2s, opacity 0.2s ease-in-out, background-color 0.2s ease-in-out; }
+.mCSB_scrollTools_vertical.mCSB_scrollTools_onDrag_expand .mCSB_dragger_bar,
+.mCSB_scrollTools_vertical.mCSB_scrollTools_onDrag_expand .mCSB_draggerRail,
+.mCSB_scrollTools_horizontal.mCSB_scrollTools_onDrag_expand .mCSB_dragger_bar,
+.mCSB_scrollTools_horizontal.mCSB_scrollTools_onDrag_expand .mCSB_draggerRail {
+  -webkit-transition: width .2s ease-out .2s, height .2s ease-out .2s, margin-left .2s ease-out .2s, margin-right .2s ease-out .2s, margin-top .2s ease-out .2s, margin-bottom .2s ease-out .2s, opacity .2s ease-in-out, background-color .2s ease-in-out;
+  transition: width .2s ease-out .2s, height .2s ease-out .2s, margin-left .2s ease-out .2s, margin-right .2s ease-out .2s, margin-top .2s ease-out .2s, margin-bottom .2s ease-out .2s, opacity .2s ease-in-out, background-color .2s ease-in-out; }
 
 /*
 ------------------------------------------------------------------------------------------------------------------------
@@ -332,22 +350,28 @@ yx-axis
 ------------------------------------------------------------------------------------------------------------------------
 */
 /*
-	----------------------------------------
-	6.1 THEMES
-	----------------------------------------
-	*/
+----------------------------------------
+6.1 THEMES
+----------------------------------------
+*/
 /* default theme ("light") */
 .mCSB_scrollTools {
-  opacity: 0.2;
+  opacity: 0.20;
   filter: "alpha(opacity=20)";
   -ms-filter: "alpha(opacity=20)"; }
 
-.mCS-autoHide > .mCustomScrollBox > .mCSB_scrollTools, .mCS-autoHide > .mCustomScrollBox ~ .mCSB_scrollTools {
+.mCS-autoHide > .mCustomScrollBox > .mCSB_scrollTools,
+.mCS-autoHide > .mCustomScrollBox ~ .mCSB_scrollTools {
   opacity: 0;
   filter: "alpha(opacity=0)";
   -ms-filter: "alpha(opacity=0)"; }
 
-.mCustomScrollbar > .mCustomScrollBox > .mCSB_scrollTools.mCSB_scrollTools_onDrag, .mCustomScrollbar > .mCustomScrollBox ~ .mCSB_scrollTools.mCSB_scrollTools_onDrag, .mCustomScrollBox:hover > .mCSB_scrollTools, .mCustomScrollBox:hover ~ .mCSB_scrollTools, .mCS-autoHide:hover > .mCustomScrollBox > .mCSB_scrollTools, .mCS-autoHide:hover > .mCustomScrollBox ~ .mCSB_scrollTools {
+.mCustomScrollbar > .mCustomScrollBox > .mCSB_scrollTools.mCSB_scrollTools_onDrag,
+.mCustomScrollbar > .mCustomScrollBox ~ .mCSB_scrollTools.mCSB_scrollTools_onDrag,
+.mCustomScrollBox:hover > .mCSB_scrollTools,
+.mCustomScrollBox:hover ~ .mCSB_scrollTools,
+.mCS-autoHide:hover > .mCustomScrollBox > .mCSB_scrollTools,
+.mCS-autoHide:hover > .mCustomScrollBox ~ .mCSB_scrollTools {
   opacity: 1;
   filter: "alpha(opacity=100)";
   -ms-filter: "alpha(opacity=100)"; }
@@ -370,13 +394,17 @@ yx-axis
   filter: "alpha(opacity=85)";
   -ms-filter: "alpha(opacity=85)"; }
 
-.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar, .mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar {
+.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar,
+.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar {
   background-color: #fff;
   background-color: rgba(255, 255, 255, 0.9);
   filter: "alpha(opacity=90)";
   -ms-filter: "alpha(opacity=90)"; }
 
-.mCSB_scrollTools .mCSB_buttonUp, .mCSB_scrollTools .mCSB_buttonDown, .mCSB_scrollTools .mCSB_buttonLeft, .mCSB_scrollTools .mCSB_buttonRight {
+.mCSB_scrollTools .mCSB_buttonUp,
+.mCSB_scrollTools .mCSB_buttonDown,
+.mCSB_scrollTools .mCSB_buttonLeft,
+.mCSB_scrollTools .mCSB_buttonRight {
   background-image: url(mCSB_buttons.png);
   /* css sprites */
   background-repeat: no-repeat;
@@ -387,41 +415,47 @@ yx-axis
 .mCSB_scrollTools .mCSB_buttonUp {
   background-position: 0 0;
   /*
-		sprites locations
-		light: 0 0, -16px 0, -32px 0, -48px 0, 0 -72px, -16px -72px, -32px -72px
-		dark: -80px 0, -96px 0, -112px 0, -128px 0, -80px -72px, -96px -72px, -112px -72px
-		*/ }
+  sprites locations
+  light: 0 0, -16px 0, -32px 0, -48px 0, 0 -72px, -16px -72px, -32px -72px
+  dark: -80px 0, -96px 0, -112px 0, -128px 0, -80px -72px, -96px -72px, -112px -72px
+  */ }
 
 .mCSB_scrollTools .mCSB_buttonDown {
   background-position: 0 -20px;
   /*
-		sprites locations
-		light: 0 -20px, -16px -20px, -32px -20px, -48px -20px, 0 -92px, -16px -92px, -32px -92px
-		dark: -80px -20px, -96px -20px, -112px -20px, -128px -20px, -80px -92px, -96px -92px, -112 -92px
-		*/ }
+  sprites locations
+  light: 0 -20px, -16px -20px, -32px -20px, -48px -20px, 0 -92px, -16px -92px, -32px -92px
+  dark: -80px -20px, -96px -20px, -112px -20px, -128px -20px, -80px -92px, -96px -92px, -112 -92px
+  */ }
 
 .mCSB_scrollTools .mCSB_buttonLeft {
   background-position: 0 -40px;
   /*
-		sprites locations
-		light: 0 -40px, -20px -40px, -40px -40px, -60px -40px, 0 -112px, -20px -112px, -40px -112px
-		dark: -80px -40px, -100px -40px, -120px -40px, -140px -40px, -80px -112px, -100px -112px, -120px -112px
-		*/ }
+  sprites locations
+  light: 0 -40px, -20px -40px, -40px -40px, -60px -40px, 0 -112px, -20px -112px, -40px -112px
+  dark: -80px -40px, -100px -40px, -120px -40px, -140px -40px, -80px -112px, -100px -112px, -120px -112px
+  */ }
 
 .mCSB_scrollTools .mCSB_buttonRight {
   background-position: 0 -56px;
   /*
-		sprites locations
-		light: 0 -56px, -20px -56px, -40px -56px, -60px -56px, 0 -128px, -20px -128px, -40px -128px
-		dark: -80px -56px, -100px -56px, -120px -56px, -140px -56px, -80px -128px, -100px -128px, -120px -128px
-		*/ }
+  sprites locations
+  light: 0 -56px, -20px -56px, -40px -56px, -60px -56px, 0 -128px, -20px -128px, -40px -128px
+  dark: -80px -56px, -100px -56px, -120px -56px, -140px -56px, -80px -128px, -100px -128px, -120px -128px
+  */ }
 
-.mCSB_scrollTools .mCSB_buttonUp:hover, .mCSB_scrollTools .mCSB_buttonDown:hover, .mCSB_scrollTools .mCSB_buttonLeft:hover, .mCSB_scrollTools .mCSB_buttonRight:hover {
+.mCSB_scrollTools .mCSB_buttonUp:hover,
+.mCSB_scrollTools .mCSB_buttonDown:hover,
+.mCSB_scrollTools .mCSB_buttonLeft:hover,
+.mCSB_scrollTools .mCSB_buttonRight:hover {
   opacity: 0.75;
   filter: "alpha(opacity=75)";
   -ms-filter: "alpha(opacity=75)"; }
 
-.mCSB_scrollTools .mCSB_buttonUp:active, .mCSB_scrollTools .mCSB_buttonDown:active, .mCSB_scrollTools .mCSB_buttonLeft:active, .mCSB_scrollTools .mCSB_buttonRight:active {
+.mCSB_scrollTools .mCSB_buttonUp:active,
+.mCSB_scrollTools .mCSB_buttonDown:active,
+.mCSB_scrollTools .mCSB_buttonLeft:active,
+.mCSB_scrollTools .mCSB_buttonRight:active {
   opacity: 0.9;
   filter: "alpha(opacity=90)";
   -ms-filter: "alpha(opacity=90)"; }
@@ -438,7 +472,8 @@ yx-axis
 .mCS-dark.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar {
   background-color: rgba(0, 0, 0, 0.85); }
 
-.mCS-dark.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar, .mCS-dark.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar {
+.mCS-dark.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar,
+.mCS-dark.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar {
   background-color: rgba(0, 0, 0, 0.9); }
 
 .mCS-dark.mCSB_scrollTools .mCSB_buttonUp {
@@ -486,10 +521,12 @@ yx-axis
   -moz-box-sizing: content-box;
        box-sizing: content-box; }
 
-.scroll-element.scroll-x.scroll-scrollx_visible, .scroll-element.scroll-y.scroll-scrolly_visible {
+.scroll-element.scroll-x.scroll-scrollx_visible,
+.scroll-element.scroll-y.scroll-scrolly_visible {
   display: block; }
 
-.scroll-element .scroll-bar, .scroll-element .scroll-arrow {
+.scroll-element .scroll-bar,
+.scroll-element .scroll-arrow {
   cursor: default; }
 
 .scroll-textarea {
@@ -519,7 +556,8 @@ yx-axis
   width: 0; }
 
 /*************** SIMPLE INNER SCROLLBAR ***************/
-.gallery > .scroll-element, .gallery > .scroll-element div {
+.gallery > .scroll-element,
+.gallery > .scroll-element div {
   border: none;
   margin: 0;
   padding: 0;
@@ -548,7 +586,9 @@ yx-axis
 .gallery > .scroll-element .scroll-element_outer {
   overflow: hidden; }
 
-.gallery > .scroll-element .scroll-element_outer, .gallery > .scroll-element .scroll-element_track, .gallery > .scroll-element .scroll-bar {
+.gallery > .scroll-element .scroll-element_outer,
+.gallery > .scroll-element .scroll-element_track,
+.gallery > .scroll-element .scroll-bar {
   border-radius: 0px; }
 
 .gallery > .scroll-element .scroll-element_track {
@@ -558,10 +598,10 @@ yx-axis
   background-color: #27ffd4; }
 
 .gallery > .scroll-element:hover .scroll-bar {
-  background-color: #00f3c2; }
+  background-color: #00f3c3; }
 
 .gallery > .scroll-element.scroll-draggable .scroll-bar {
-  background-color: #00f3c2; }
+  background-color: #00f3c3; }
 
 /* update scrollbar offset if both scrolls are visible */
 .gallery > .scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_track {
@@ -603,8 +643,8 @@ yx-axis
   background: rgba(47, 47, 47, 0.5);
   z-index: 12;
   border-radius: 15px;
-  -webkit-transition: 0.1s background;
-          transition: 0.1s background; }
+  -webkit-transition: .1s background;
+          transition: .1s background; }
 
 .scroll-wrapper:hover .external-scroll_y .scroll-bar {
   background: rgba(60, 60, 60, 0.9); }
@@ -663,7 +703,8 @@ yx-axis
   text-align: left;
   z-index: 1045; }
 
-.mfp-inline-holder .mfp-content, .mfp-ajax-holder .mfp-content {
+.mfp-inline-holder .mfp-content,
+.mfp-ajax-holder .mfp-content {
   width: 100%;
   cursor: auto; }
 
@@ -682,7 +723,10 @@ yx-axis
 .mfp-auto-cursor .mfp-content {
   cursor: auto; }
 
-.mfp-close, .mfp-arrow, .mfp-preloader, .mfp-counter {
+.mfp-close,
+.mfp-arrow,
+.mfp-preloader,
+.mfp-counter {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -755,7 +799,8 @@ button::-moz-focus-inner {
 .mfp-close-btn-in .mfp-close {
   color: #333; }
 
-.mfp-image-holder .mfp-close, .mfp-iframe-holder .mfp-close {
+.mfp-image-holder .mfp-close,
+.mfp-iframe-holder .mfp-close {
   color: #FFF;
   right: -6px;
   text-align: right;
@@ -780,13 +825,15 @@ button::-moz-focus-inner {
   padding: 0;
   width: 90px;
   height: 110px;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+  -webkit-tap-highlight-color: transparent; }
   .mfp-arrow:active {
     margin-top: -54px; }
   .mfp-arrow:hover, .mfp-arrow:focus {
     opacity: 1;
     filter: alpha(opacity=100); }
-  .mfp-arrow:before, .mfp-arrow:after, .mfp-arrow .mfp-b, .mfp-arrow .mfp-a {
+  .mfp-arrow:before, .mfp-arrow:after,
+  .mfp-arrow .mfp-b,
+  .mfp-arrow .mfp-a {
     content: '';
     display: block;
     width: 0;
@@ -797,30 +844,36 @@ button::-moz-focus-inner {
     margin-top: 35px;
     margin-left: 35px;
     border: medium inset transparent; }
-  .mfp-arrow:after, .mfp-arrow .mfp-a {
+  .mfp-arrow:after,
+  .mfp-arrow .mfp-a {
     border-top-width: 13px;
     border-bottom-width: 13px;
     top: 8px; }
-  .mfp-arrow:before, .mfp-arrow .mfp-b {
+  .mfp-arrow:before,
+  .mfp-arrow .mfp-b {
     border-top-width: 21px;
     border-bottom-width: 21px;
     opacity: 0.7; }
 
 .mfp-arrow-left {
   left: 0; }
-  .mfp-arrow-left:after, .mfp-arrow-left .mfp-a {
+  .mfp-arrow-left:after,
+  .mfp-arrow-left .mfp-a {
     border-right: 17px solid #FFF;
     margin-left: 31px; }
-  .mfp-arrow-left:before, .mfp-arrow-left .mfp-b {
+  .mfp-arrow-left:before,
+  .mfp-arrow-left .mfp-b {
     margin-left: 25px;
     border-right: 27px solid #3F3F3F; }
 
 .mfp-arrow-right {
   right: 0; }
-  .mfp-arrow-right:after, .mfp-arrow-right .mfp-a {
+  .mfp-arrow-right:after,
+  .mfp-arrow-right .mfp-a {
     border-left: 17px solid #FFF;
     margin-left: 39px; }
-  .mfp-arrow-right:before, .mfp-arrow-right .mfp-b {
+  .mfp-arrow-right:before,
+  .mfp-arrow-right .mfp-b {
     border-left: 27px solid #3F3F3F; }
 
 .mfp-iframe-holder {
@@ -907,8 +960,8 @@ img.mfp-img {
 
 @media screen and (max-width: 800px) and (orientation: landscape), screen and (max-height: 300px) {
   /**
-       * Remove all paddings around the image on small screen
-       */
+   * Remove all paddings around the image on small screen
+   */
   .mfp-img-mobile .mfp-image-holder {
     padding-left: 0;
     padding-right: 0; }
@@ -944,24 +997,25 @@ img.mfp-img {
     position: fixed;
     text-align: center;
     padding: 0; } }
-
 @media all and (max-width: 900px) {
   .mfp-arrow {
     -webkit-transform: scale(0.75);
     -ms-transform: scale(0.75);
         transform: scale(0.75); }
+
   .mfp-arrow-left {
     -webkit-transform-origin: 0;
     -ms-transform-origin: 0;
         transform-origin: 0; }
+
   .mfp-arrow-right {
     -webkit-transform-origin: 100%;
     -ms-transform-origin: 100%;
         transform-origin: 100%; }
+
   .mfp-container {
     padding-left: 6px;
     padding-right: 6px; } }
-
 .mfp-ie7 .mfp-img {
   padding: 0; }
 .mfp-ie7 .mfp-bottom-bar {
@@ -1006,14 +1060,28 @@ body {
  * Correct `block` display not defined for `details` or `summary` in IE 10/11 and Firefox.
  * Correct `block` display not defined for `main` in IE 11.
  */
-article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
   display: block; }
 
 /**
  * 1. Correct `inline-block` display not defined in IE 8/9.
  * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
  */
-audio, canvas, progress, video {
+audio,
+canvas,
+progress,
+video {
   display: inline-block;
   /* 1 */
   vertical-align: baseline;
@@ -1031,7 +1099,8 @@ audio:not([controls]) {
  * Address `[hidden]` styling not present in IE 8/9/10.
  * Hide the `template` element in IE 8/9/11, Safari, and Firefox < 22.
  */
-[hidden], template {
+[hidden],
+template {
   display: none; }
 
 /* Links
@@ -1045,7 +1114,8 @@ a {
 /**
  * Improve readability when focused and also mouse hovered in all browsers.
  */
-a:active, a:hover {
+a:active,
+a:hover {
   outline: 0; }
 
 /* Text-level semantics
@@ -1059,7 +1129,8 @@ abbr[title] {
 /**
  * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
  */
-b, strong {
+b,
+strong {
   font-weight: bold; }
 
 /**
@@ -1092,7 +1163,8 @@ small {
 /**
  * Prevent `sub` and `sup` affecting `line-height` in all browsers.
  */
-sub, sup {
+sub,
+sup {
   font-size: 75%;
   line-height: 0;
   position: relative;
@@ -1143,7 +1215,10 @@ pre {
 /**
  * Address odd `em`-unit font size rendering in all browsers.
  */
-code, kbd, pre, samp {
+code,
+kbd,
+pre,
+samp {
   font-family: monospace, monospace;
   font-size: 1em; }
 
@@ -1159,7 +1234,11 @@ code, kbd, pre, samp {
  * 2. Correct font properties not being inherited.
  * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
  */
-button, input, optgroup, select, textarea {
+button,
+input,
+optgroup,
+select,
+textarea {
   color: inherit;
   /* 1 */
   font: inherit;
@@ -1179,7 +1258,8 @@ button {
  * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
  * Correct `select` style inheritance in Firefox.
  */
-button, select {
+button,
+select {
   text-transform: none; }
 
 /**
@@ -1189,7 +1269,10 @@ button, select {
  * 3. Improve usability and consistency of cursor style between image-type
  *    `input` and others.
  */
-button, html input[type="button"], input[type="reset"], input[type="submit"] {
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
   -webkit-appearance: button;
   /* 2 */
   cursor: pointer;
@@ -1198,13 +1281,15 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
 /**
  * Re-set default cursor for disabled elements.
  */
-button[disabled], html input[disabled] {
+button[disabled],
+html input[disabled] {
   cursor: default; }
 
 /**
  * Remove inner padding and border in Firefox 4+.
  */
-button::-moz-focus-inner, input::-moz-focus-inner {
+button::-moz-focus-inner,
+input::-moz-focus-inner {
   border: 0;
   padding: 0; }
 
@@ -1222,7 +1307,8 @@ input {
  * 1. Address box sizing set to `content-box` in IE 8/9/10.
  * 2. Remove excess padding in IE 8/9/10.
  */
-input[type="checkbox"], input[type="radio"] {
+input[type="checkbox"],
+input[type="radio"] {
   -moz-box-sizing: border-box;
        box-sizing: border-box;
   /* 1 */
@@ -1234,7 +1320,8 @@ input[type="checkbox"], input[type="radio"] {
  * `font-size` values of the `input`, it causes the cursor style of the
  * decrement button to change from `default` to `text`.
  */
-input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
   height: auto; }
 
 /**
@@ -1254,7 +1341,8 @@ input[type="search"] {
  * Safari (but not Chrome) clips the cancel button when the search input has
  * padding (and `textfield` appearance).
  */
-input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none; }
 
 /**
@@ -1297,7 +1385,8 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-td, th {
+td,
+th {
   padding: 0; }
 
 *, *:before, *:after {
@@ -1321,54 +1410,53 @@ img, iframe {
 a {
   text-decoration: none; }
 
-h1, h2, h3, h4, h5, h6, p, blockquote, pre, dl, dd, ol, ul, form, fieldset, legend, table, th, td, caption, hr {
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre,
+dl, dd, ol, ul,
+form, fieldset, legend,
+table, th, td, caption,
+hr {
   margin: 0;
   padding: 0; }
 
 /* Regular */
 @font-face {
   font-family: 'League Gothic';
-  src: url('../../fonts/leaguegothic/leaguegothic-regular-webfont.eot');
-  src: url('../../fonts/leaguegothic/leaguegothic-regular-webfont.eot?#iefix') format('embedded-opentype'), url('../../fonts/leaguegothic/leaguegothic-regular-webfont.woff') format('woff'), url('../../fonts/leaguegothic/leaguegothic-regular-webfont.ttf') format('truetype'), url('../../fonts/leaguegothic/leaguegothic-regular-webfont.svg#league_gothicregular') format('svg');
+  src: url("../../fonts/leaguegothic/leaguegothic-regular-webfont.eot");
+  src: url("../../fonts/leaguegothic/leaguegothic-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../../fonts/leaguegothic/leaguegothic-regular-webfont.woff") format("woff"), url("../../fonts/leaguegothic/leaguegothic-regular-webfont.ttf") format("truetype"), url("../../fonts/leaguegothic/leaguegothic-regular-webfont.svg#league_gothicregular") format("svg");
   font-weight: normal;
   font-style: normal; }
-
 /* Italic */
 @font-face {
   font-family: 'League Gothic';
-  src: url('../../fonts/leaguegothic/leaguegothic-italic-webfont.eot');
-  src: url('../../fonts/leaguegothic/leaguegothic-italic-webfont.eot?#iefix') format('embedded-opentype'), url('../../fonts/leaguegothic/leaguegothic-italic-webfont.woff') format('woff'), url('../../fonts/leaguegothic/leaguegothic-italic-webfont.ttf') format('truetype'), url('../../fonts/leaguegothic/leaguegothic-italic-webfont.svg#league_gothic_italicregular') format('svg');
+  src: url("../../fonts/leaguegothic/leaguegothic-italic-webfont.eot");
+  src: url("../../fonts/leaguegothic/leaguegothic-italic-webfont.eot?#iefix") format("embedded-opentype"), url("../../fonts/leaguegothic/leaguegothic-italic-webfont.woff") format("woff"), url("../../fonts/leaguegothic/leaguegothic-italic-webfont.ttf") format("truetype"), url("../../fonts/leaguegothic/leaguegothic-italic-webfont.svg#league_gothic_italicregular") format("svg");
   font-weight: normal;
   font-style: italic; }
-
 @font-face {
   font-family: 'Fira Sans';
-  src: url('../../fonts/fira/FiraSans-Regular.eot');
-  src: local('Fira Sans Regular'), url('../../fonts/fira/FiraSans-Regular.eot') format('embedded-opentype'), url('../../fonts/fira/FiraSans-Regular.woff') format('woff'), url('../../fonts/fira/FiraSans-Regular.ttf') format('truetype');
+  src: url("../../fonts/fira/FiraSans-Regular.eot");
+  src: local("Fira Sans Regular"), url("../../fonts/fira/FiraSans-Regular.eot") format("embedded-opentype"), url("../../fonts/fira/FiraSans-Regular.woff") format("woff"), url("../../fonts/fira/FiraSans-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal; }
-
 @font-face {
   font-family: 'Fira Sans';
-  src: url('../../fonts/fira/FiraSans-Italic.eot');
-  src: local('Fira Sans Regular Italic'), url('../../fonts/fira/FiraSans-Italic.eot') format('embedded-opentype'), url('../../fonts/fira/FiraSans-Italic.woff') format('woff'), url('../../fonts/fira/FiraSans-Italic.ttf') format('truetype');
+  src: url("../../fonts/fira/FiraSans-Italic.eot");
+  src: local("Fira Sans Regular Italic"), url("../../fonts/fira/FiraSans-Italic.eot") format("embedded-opentype"), url("../../fonts/fira/FiraSans-Italic.woff") format("woff"), url("../../fonts/fira/FiraSans-Italic.ttf") format("truetype");
   font-weight: 400;
   font-style: italic; }
-
 @font-face {
   font-family: 'Fira Sans';
-  src: url('../../fonts/fira/FiraSans-Bold.eot');
-  src: local('Fira Sans Bold'), url('../../fonts/fira/FiraSans-Bold.eot') format('embedded-opentype'), url('../../fonts/fira/FiraSans-Bold.woff') format('woff'), url('../../fonts/fira/FiraSans-Bold.ttf') format('truetype');
+  src: url("../../fonts/fira/FiraSans-Bold.eot");
+  src: local("Fira Sans Bold"), url("../../fonts/fira/FiraSans-Bold.eot") format("embedded-opentype"), url("../../fonts/fira/FiraSans-Bold.woff") format("woff"), url("../../fonts/fira/FiraSans-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal; }
-
 @font-face {
   font-family: 'Fira Sans';
-  src: url('../../fonts/fira/FiraSans-BoldItalic.eot');
-  src: local('Fira Sans Bold Italic'), url('../../fonts/fira/FiraSans-BoldItalic.eot') format('embedded-opentype'), url('../../fonts/fira/FiraSans-BoldItalic.woff') format('woff'), url('../../fonts/fira/FiraSans-BoldItalic.ttf') format('truetype');
+  src: url("../../fonts/fira/FiraSans-BoldItalic.eot");
+  src: local("Fira Sans Bold Italic"), url("../../fonts/fira/FiraSans-BoldItalic.eot") format("embedded-opentype"), url("../../fonts/fira/FiraSans-BoldItalic.woff") format("woff"), url("../../fonts/fira/FiraSans-BoldItalic.ttf") format("truetype");
   font-weight: 700;
   font-style: italic; }
-
 /*------------------------------------*\
 		# Top header single
 \*------------------------------------*/
@@ -1406,7 +1494,7 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, dl, dd, ol, ul, form, fieldset, lege
     font: 0/0 a;
     text-shadow: none;
     color: transparent;
-    background-image: url('../../img/icon-three-dots.svg');
+    background-image: url("../../img/icon-three-dots.svg");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 36px 8px;
@@ -1416,11 +1504,11 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, dl, dd, ol, ul, form, fieldset, lege
   .top-header-single .single-mobile-nav-wrapper a {
     display: block;
     padding: 16px 20px;
-    font-family: 'Inconsolata', monospace;
+    font-family: "Inconsolata", monospace;
     color: #fff;
     text-transform: uppercase;
     font-size: 0.9375rem;
-    letter-spacing: 0.15em;
+    letter-spacing: .15em;
     height: 50px; }
   .top-header-single .single-mobile-nav-wrapper > ul {
     display: none; }
@@ -1480,11 +1568,11 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, dl, dd, ol, ul, form, fieldset, lege
       .top-header-single .single-desktop-nav-wrapper > ul > li > a {
         display: block;
         padding: 16px 20px;
-        font-family: 'Inconsolata', monospace;
+        font-family: "Inconsolata", monospace;
         color: #fff;
         text-transform: uppercase;
         font-size: 0.9375rem;
-        letter-spacing: 0.15em;
+        letter-spacing: .15em;
         height: 50px; }
         .top-header-single .single-desktop-nav-wrapper > ul > li > a:active, .top-header-single .single-desktop-nav-wrapper > ul > li > a:hover {
           background-color: #27ffd4;
@@ -1501,7 +1589,7 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, dl, dd, ol, ul, form, fieldset, lege
       border-bottom: 3px solid #202020;
       min-width: 100%; }
       .top-header-single .single-desktop-nav-wrapper > ul .sub-menu > li > a {
-        font-family: 'Inconsolata', monospace;
+        font-family: "Inconsolata", monospace;
         text-transform: uppercase;
         font-size: 0.875rem;
         padding: 10px 20px;
@@ -1575,7 +1663,7 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, dl, dd, ol, ul, form, fieldset, lege
     font: 0/0 a;
     text-shadow: none;
     color: transparent;
-    background-image: url('../../img/icon-three-dots.svg');
+    background-image: url("../../img/icon-three-dots.svg");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 36px 8px;
@@ -1585,11 +1673,11 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, dl, dd, ol, ul, form, fieldset, lege
   .top-header-home .home-mobile-nav-wrapper a {
     display: block;
     padding: 16px 20px;
-    font-family: 'Inconsolata', monospace;
+    font-family: "Inconsolata", monospace;
     color: #fff;
     text-transform: uppercase;
     font-size: 0.9375rem;
-    letter-spacing: 0.15em;
+    letter-spacing: .15em;
     height: 50px; }
   .top-header-home .home-mobile-nav-wrapper > ul {
     display: none; }
@@ -1649,11 +1737,11 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, dl, dd, ol, ul, form, fieldset, lege
       .top-header-home .home-desktop-nav-wrapper > ul > li > a {
         display: block;
         padding: 16px 20px;
-        font-family: 'Inconsolata', monospace;
+        font-family: "Inconsolata", monospace;
         color: #fff;
         text-transform: uppercase;
         font-size: 0.9375rem;
-        letter-spacing: 0.15em;
+        letter-spacing: .15em;
         height: 50px; }
         .top-header-home .home-desktop-nav-wrapper > ul > li > a:active, .top-header-home .home-desktop-nav-wrapper > ul > li > a:hover {
           background-color: #27ffd4;
@@ -1670,7 +1758,7 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, dl, dd, ol, ul, form, fieldset, lege
       border-bottom: 3px solid #202020;
       min-width: 100%; }
       .top-header-home .home-desktop-nav-wrapper > ul .sub-menu > li > a {
-        font-family: 'Inconsolata', monospace;
+        font-family: "Inconsolata", monospace;
         text-transform: uppercase;
         font-size: 0.875rem;
         padding: 10px 20px;
@@ -1720,12 +1808,12 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, dl, dd, ol, ul, form, fieldset, lege
   height: 100%;
   width: 100%;
   z-index: 10;
-  -webkit-transition: 0.5s;
-          transition: 0.5s; }
+  -webkit-transition: .5s;
+          transition: .5s; }
 
 .single-post-header-hover {
-  -webkit-transition: 0.5s;
-          transition: 0.5s;
+  -webkit-transition: .5s;
+          transition: .5s;
   position: relative;
   top: 0;
   height: 100%;
@@ -1734,7 +1822,7 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, dl, dd, ol, ul, form, fieldset, lege
   display: block;
   content: '';
   opacity: 0;
-  background-image: url('../../img/single-post-bg.svg');
+  background-image: url("../../img/single-post-bg.svg");
   background-position: center; }
 
 .single-post-header__body {
@@ -1745,17 +1833,17 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, dl, dd, ol, ul, form, fieldset, lege
   bottom: 30px; }
   @media screen and (min-width: 31.25em) {
     .single-post-header__body {
-      bottom: 50px; }
-      @media screen and (max-height: 37.5em) {
-        .single-post-header__body {
-          bottom: 30px; } } }
+      bottom: 50px; } }
+  @media screen and (min-width: 31.25em) and (max-height: 37.5em) {
+    .single-post-header__body {
+      bottom: 30px; } }
 
 .single-post-header__body-inner {
   max-width: 900px;
   margin: 0 auto; }
 
 .single-post-header__title {
-  font-family: 'League Gothic', Helvetica, sans-serif;
+  font-family: "League Gothic", Helvetica, sans-serif;
   font-weight: 400;
   line-height: 1;
   font-size: 2.1875rem;
@@ -1769,16 +1857,18 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, dl, dd, ol, ul, form, fieldset, lege
     clear: both; }
   @media screen and (min-width: 31.25em) {
     .single-post-header__title {
-      font-size: 3.125rem; }
-      @media screen and (max-height: 37.5em) {
-        .single-post-header__title {
-          font-size: 2.1875rem; } } }
+      font-size: 3.125rem; } }
+  @media screen and (min-width: 31.25em) and (max-height: 37.5em) {
+    .single-post-header__title {
+      font-size: 2.1875rem; } }
+
   @media screen and (min-width: 48em) {
     .single-post-header__title {
-      font-size: 5.625rem; }
-      @media screen and (max-height: 37.5em) {
-        .single-post-header__title {
-          font-size: 3.125rem; } } }
+      font-size: 5.625rem; } }
+  @media screen and (min-width: 48em) and (max-height: 37.5em) {
+    .single-post-header__title {
+      font-size: 3.125rem; } }
+
   .single-post-header__title a {
     color: #fff; }
 
@@ -1787,7 +1877,7 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, dl, dd, ol, ul, form, fieldset, lege
   margin: 0 auto; }
 
 .single-post-author {
-  font-family: 'Fira Sans', Helvetica, sans-serif;
+  font-family: "Fira Sans", Helvetica, sans-serif;
   font-weight: 700;
   text-transform: uppercase;
   text-align: center;
@@ -1811,7 +1901,7 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, dl, dd, ol, ul, form, fieldset, lege
 
 .single-post-meta {
   width: 100%;
-  font-family: 'Inconsolata', monospace;
+  font-family: "Inconsolata", monospace;
   text-transform: uppercase;
   font-size: 0.8125rem;
   top: 0;
@@ -1827,7 +1917,7 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, dl, dd, ol, ul, form, fieldset, lege
     color: #fff;
     background-color: #202020;
     padding: 5px 10px;
-    letter-spacing: 0.1em;
+    letter-spacing: .1em;
     float: left; }
     .single-post-meta .single-post-category:hover {
       background-color: #27ffd4;
@@ -1836,14 +1926,14 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, dl, dd, ol, ul, form, fieldset, lege
     color: #fff;
     background-color: #202020;
     padding: 5px 10px;
-    letter-spacing: 0.1em;
+    letter-spacing: .1em;
     float: left; }
   .single-post-meta .post-author {
     color: #fff;
     background-color: #202020;
     padding: 5px 10px;
-    letter-spacing: 0.1em;
-    font-family: 'Inconsolata', monospace;
+    letter-spacing: .1em;
+    font-family: "Inconsolata", monospace;
     text-transform: uppercase;
     font-size: 0.8125rem;
     display: block;
@@ -1869,9 +1959,9 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, dl, dd, ol, ul, form, fieldset, lege
     color: color-darken(#202020, 4);
     line-height: 1.5;
     margin-top: 1em;
-    margin-bottom: 0.2em;
-    text-shadow: 0 1px 0 color-darken(#ffffff, 2);
-    font-family: 'League Gothic', Helvetica, sans-serif;
+    margin-bottom: .2em;
+    text-shadow: 0 1px 0 color-darken(white, 2);
+    font-family: "League Gothic", Helvetica, sans-serif;
     font-weight: 400; }
     .single-post-content h1:first-child, .single-post-content h2:first-child, .single-post-content h3:first-child, .single-post-content h4:first-child {
       margin-top: 0; }
@@ -1880,7 +1970,7 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, dl, dd, ol, ul, form, fieldset, lege
     margin-bottom: 1.1em;
     line-height: 1.9;
     font-weight: 400;
-    font-family: 'Fira Sans', Helvetica, sans-serif; }
+    font-family: "Fira Sans", Helvetica, sans-serif; }
     .single-post-content p:last-child {
       margin-bottom: 0; }
   .single-post-content ul, .single-post-content ol {
@@ -1889,7 +1979,7 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, dl, dd, ol, ul, form, fieldset, lege
     margin-bottom: 2em; }
   .single-post-content li {
     padding-left: 12px;
-    margin-bottom: 0.3em; }
+    margin-bottom: .3em; }
   .single-post-content h2 {
     font-size: 3.125rem;
     text-transform: uppercase; }
@@ -1902,8 +1992,8 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre, dl, dd, ol, ul, form, fieldset, lege
     cursor: zoom-in; }
   .single-post-content p a {
     color: #202020;
-    -webkit-transition: 0.3s;
-            transition: 0.3s;
+    -webkit-transition: .3s;
+            transition: .3s;
     color: #00c59e;
     font-weight: 700; }
     .single-post-content p a:focus {
@@ -1951,10 +2041,8 @@ p.single-post-content__excerpt {
     top: 0;
     color: #868686;
     left: 0; }
-    @media screen and (min-width: 68.75em) { }
   .wp-caption.alignright .wp-caption-text {
     left: auto; }
-    @media screen and (min-width: 68.75em) { }
 
 .single-post-content img {
   margin-left: auto;
@@ -2054,7 +2142,7 @@ img.alignnone {
     text-align: center;
     margin-bottom: 100px; }
     .single-post-footer .single-tags h3 {
-      font-family: 'League Gothic', Helvetica, sans-serif;
+      font-family: "League Gothic", Helvetica, sans-serif;
       text-transform: uppercase;
       font-weight: 400; }
     .single-post-footer .single-tags ul {
@@ -2067,20 +2155,20 @@ img.alignnone {
         margin-right: 0; }
     .single-post-footer .single-tags a {
       border: 1px solid #202020;
-      font-family: 'Inconsolata', monospace;
+      font-family: "Inconsolata", monospace;
       text-transform: uppercase;
       padding: 3px 10px;
       border-radius: 20px;
       color: #202020;
       font-size: 0.8125rem;
-      letter-spacing: 0.05em; }
+      letter-spacing: .05em; }
       .single-post-footer .single-tags a:hover {
         background-color: #27ffd4;
         border: 1px solid #27ffd4; }
   .single-post-footer .comments-wrap a {
     color: #202020;
-    -webkit-transition: 0.3s;
-            transition: 0.3s;
+    -webkit-transition: .3s;
+            transition: .3s;
     color: #00c59e;
     font-weight: 700; }
     .single-post-footer .comments-wrap a:focus {
@@ -2099,11 +2187,11 @@ img.alignnone {
 
 */
 .quote {
-  font-family: 'League Gothic', Helvetica, sans-serif; }
+  font-family: "League Gothic", Helvetica, sans-serif; }
   .quote a {
     color: #202020;
-    -webkit-transition: 0.3s;
-            transition: 0.3s;
+    -webkit-transition: .3s;
+            transition: .3s;
     color: #00c59e; }
     .quote a:visited {
       color: #00e4b6; }
@@ -2112,7 +2200,8 @@ img.alignnone {
     .quote a:active, .quote a:hover {
       background: #27ffd4;
       color: #202020; }
-  .quote blockquote, .quote blockquote p {
+  .quote blockquote,
+  .quote blockquote p {
     color: #202020;
     font-size: 2rem;
     line-height: 1.2;
@@ -2132,7 +2221,6 @@ img.alignnone {
       float: right;
       width: 40%;
       margin-left: 2em; } }
-  @media screen and (min-width: 68.75em) { }
 
 .pullquote--left {
   text-align: left; }
@@ -2142,13 +2230,11 @@ img.alignnone {
       width: 40%;
       position: relative;
       margin-right: 2em; } }
-  @media screen and (min-width: 68.75em) { }
 
 .pullquote--center {
   text-align: center;
   margin-top: 50px;
   margin-bottom: 50px; }
-  @media screen and (min-width: 68.75em) { }
 
 .content-island {
   background: white;
@@ -2201,7 +2287,7 @@ img.alignnone {
   padding-left: 10px; }
   .index-header h1 {
     color: #27ffd4;
-    font-family: 'League Gothic', Helvetica, sans-serif;
+    font-family: "League Gothic", Helvetica, sans-serif;
     text-transform: uppercase;
     font-weight: 400;
     font-size: 3.125rem; }
@@ -2255,12 +2341,12 @@ img.alignnone {
       display: block;
       background-color: #202020;
       opacity: 0;
-      -webkit-transition: 0.5s;
-              transition: 0.5s; }
+      -webkit-transition: .5s;
+              transition: .5s; }
     .grid-item .grid-post:hover:before {
-      opacity: 0.4; }
+      opacity: .4; }
   .grid-item .post-title {
-    font-family: 'League Gothic', Helvetica, sans-serif;
+    font-family: "League Gothic", Helvetica, sans-serif;
     color: #f0f0f0;
     font-weight: 400;
     font-size: 2.1875rem;
@@ -2286,7 +2372,7 @@ img.alignnone {
     height: 100px;
     display: block;
     width: 50%;
-    font-family: 'Fira Sans', Helvetica, sans-serif;
+    font-family: "Fira Sans", Helvetica, sans-serif;
     font-size: 3.125rem;
     line-height: 2.2;
     color: #fff;
@@ -2296,7 +2382,7 @@ img.alignnone {
 
 p.no-search-results {
   font-size: 12.5rem;
-  font-family: 'League Gothic', Helvetica, sans-serif;
+  font-family: "League Gothic", Helvetica, sans-serif;
   font-weight: 400;
   color: #f0f0f0;
   text-transform: uppercase;
@@ -2328,7 +2414,7 @@ p.no-search-results {
   z-index: 10;
   text-align: center; }
 .module--hero .post-title {
-  font-family: 'League Gothic', Helvetica, sans-serif;
+  font-family: "League Gothic", Helvetica, sans-serif;
   font-weight: 400;
   text-align: center;
   text-transform: uppercase;
@@ -2343,13 +2429,13 @@ p.no-search-results {
     .module--hero .post-title {
       font-size: 3.75rem; } }
 .module--hero .post-author {
-  font-family: 'Fira Sans', Helvetica, sans-serif;
+  font-family: "Fira Sans", Helvetica, sans-serif;
   font-weight: 400;
   text-transform: uppercase;
   text-align: center;
   color: #f0f0f0;
   font-size: 0.875rem;
-  letter-spacing: 0.5em;
+  letter-spacing: .5em;
   display: inline-block;
   text-align: center;
   position: relative;
@@ -2401,7 +2487,7 @@ p.no-search-results {
                 flex: 1;
         width: 50%; } }
     .module--media-block__content .post-title {
-      font-family: 'League Gothic', Helvetica, sans-serif;
+      font-family: "League Gothic", Helvetica, sans-serif;
       font-weight: 400;
       color: #202020;
       font-size: 2.5rem;
@@ -2413,7 +2499,7 @@ p.no-search-results {
         .module--media-block__content .post-title a:hover {
           color: #00d9ae; }
     .module--media-block__content .excerpt {
-      font-family: 'Fira Sans', Helvetica, sans-serif; }
+      font-family: "Fira Sans", Helvetica, sans-serif; }
 
 .module--three-col {
   display: -webkit-flex;
@@ -2473,12 +2559,12 @@ p.no-search-results {
       display: block;
       background-color: #202020;
       opacity: 0;
-      -webkit-transition: 0.5s;
-              transition: 0.5s; }
+      -webkit-transition: .5s;
+              transition: .5s; }
     .module--three-col .module--three-col__post:hover:before {
-      opacity: 0.4; }
+      opacity: .4; }
   .module--three-col .post-title {
-    font-family: 'League Gothic', Helvetica, sans-serif;
+    font-family: "League Gothic", Helvetica, sans-serif;
     color: #f0f0f0;
     font-weight: 400;
     font-size: 2.1875rem;
@@ -2531,12 +2617,12 @@ p.no-search-results {
       display: block;
       background-color: #202020;
       opacity: 0;
-      -webkit-transition: 0.5s;
-              transition: 0.5s; }
+      -webkit-transition: .5s;
+              transition: .5s; }
     .module--two-col .module--two-col__post:hover:before {
-      opacity: 0.4; }
+      opacity: .4; }
   .module--two-col .post-title {
-    font-family: 'League Gothic', Helvetica, sans-serif;
+    font-family: "League Gothic", Helvetica, sans-serif;
     color: #f0f0f0;
     font-weight: 400;
     font-size: 2.1875rem;
@@ -2557,7 +2643,7 @@ p.no-search-results {
   .module--gallery h2 {
     margin-bottom: 20px;
     text-align: center;
-    font-family: 'League Gothic', Helvetica, sans-serif;
+    font-family: "League Gothic", Helvetica, sans-serif;
     font-weight: 400;
     text-transform: uppercase;
     font-size: 2.5rem; }
@@ -2593,9 +2679,38 @@ p.no-search-results {
     cursor: -webkit-zoom-in;
     cursor: zoom-in; }
 
-body.archive, body.search, body.home {
+.index-additions {
+  margin-top: 15px;
+  margin-bottom: 15px; }
+  .index-additions:before, .index-additions:after {
+    content: " ";
+    display: table; }
+  .index-additions:after {
+    clear: both; }
+  @media screen and (min-width: 37.5em) {
+    .index-additions {
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+              flex-direction: row; } }
+
+.index-additions__item {
+  max-width: 100%;
+  margin-bottom: 15px; }
+  @media screen and (min-width: 37.5em) {
+    .index-additions__item {
+      margin-right: 15px;
+      margin-bottom: 0; } }
+  .index-additions__item:last-child {
+    margin-right: 0; }
+
+body.archive,
+body.search,
+body.home {
   background-color: #161616;
-  background-image: url('../../img/single-post-bg.svg');
+  background-image: url("../../img/single-post-bg.svg");
   background-position: center;
   background-attachment: fixed; }
 
@@ -2632,12 +2747,12 @@ body.archive, body.search, body.home {
     display: block;
     margin-bottom: 10px; }
   .sidebar .slogan {
-    font-family: 'Inconsolata', monospace;
+    font-family: "Inconsolata", monospace;
     font-weight: 400;
     color: #f0f0f0;
     text-transform: uppercase;
     font-size: 0.6875rem;
-    letter-spacing: 0.15em; }
+    letter-spacing: .15em; }
     .sidebar .slogan span {
       color: #393939; }
   .sidebar .sponsor-box {
@@ -2650,7 +2765,7 @@ body.archive, body.search, body.home {
     text-align: center; }
     .sidebar .sponsor-box p {
       font-size: 0.5625rem;
-      font-family: 'Fira Sans', Helvetica, sans-serif;
+      font-family: "Fira Sans", Helvetica, sans-serif;
       color: #f0f0f0;
       font-weight: 300;
       text-transform: uppercase;
@@ -2673,7 +2788,7 @@ body.archive, body.search, body.home {
     padding-right: 20px;
     padding-bottom: 100px; }
   .stream li {
-    font-family: 'Fira Sans', Helvetica, sans-serif;
+    font-family: "Fira Sans", Helvetica, sans-serif;
     font-weight: 300;
     font-size: 0.875rem;
     position: relative; }
@@ -2683,8 +2798,8 @@ body.archive, body.search, body.home {
     .stream li:hover .pub-date {
       color: #fff; }
   .stream a {
-    -webkit-transition: 0.2s;
-            transition: 0.2s;
+    -webkit-transition: .2s;
+            transition: .2s;
     color: #f0f0f0;
     margin-left: 19px;
     padding-left: 7px;
@@ -2693,14 +2808,14 @@ body.archive, body.search, body.home {
     padding-bottom: 15px;
     padding-top: 15px; }
   .stream .pub-date {
-    -webkit-transition: 0.5s;
-            transition: 0.5s;
+    -webkit-transition: .5s;
+            transition: .5s;
     position: absolute;
     left: 0;
     color: rgba(240, 240, 240, 0.2);
     height: 100%;
     padding-right: 7px;
-    font-family: 'Inconsolata', monospace;
+    font-family: "Inconsolata", monospace;
     font-size: 0.75rem;
     top: 17px; }
     .stream .pub-date span {
@@ -2734,7 +2849,7 @@ body.archive, body.search, body.home {
     margin-top: 200px;
     color: #fff;
     font-size: 3.125rem;
-    font-family: 'League Gothic', Helvetica, sans-serif;
+    font-family: "League Gothic", Helvetica, sans-serif;
     font-weight: 400;
     background-color: rgba(255, 255, 255, 0);
     text-align: center; }
@@ -2749,7 +2864,7 @@ body.archive, body.search, body.home {
     background: transparent;
     border: 0;
     font-size: 3.125rem;
-    font-family: 'Fira Sans', Helvetica, sans-serif;
+    font-family: "Fira Sans", Helvetica, sans-serif;
     outline: none; }
     .search-overlay .close-search:hover {
       color: #27ffd4; }
@@ -2766,10 +2881,10 @@ body.archive, body.search, body.home {
   margin-bottom: 20px; }
   .global-footer p {
     color: #f0f0f0;
-    font-family: 'Inconsolata', monospace; }
+    font-family: "Inconsolata", monospace; }
   .global-footer a {
     font-size: 2.5rem;
-    font-family: 'League Gothic', Helvetica, sans-serif;
+    font-family: "League Gothic", Helvetica, sans-serif;
     font-weight: 400;
     color: #f0f0f0;
     text-transform: uppercase; }

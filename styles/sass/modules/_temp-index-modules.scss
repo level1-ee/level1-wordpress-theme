@@ -1,0 +1,25 @@
+.index-additions {
+  margin-top: 15px;
+  @include clearfix();
+  margin-bottom: 15px;
+
+  @include mq(600) {
+    display: flex;
+    flex-direction: row;
+  }
+
+}
+
+.index-additions__item {
+  max-width: 100%;
+  margin-bottom: 15px;
+  @include mq(600) {
+    margin-right: 15px;
+    margin-bottom: 0;
+  }
+
+
+  &:last-child {
+    margin-right: 0;
+  }
+}

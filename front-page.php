@@ -9,8 +9,8 @@
 			</a>
 		</div>
 		<div class="index-additions__item index-additions__item__2014">
-			<a href="http://level1.ee/level2014/" target="_blank">
-				<img src="<?php echo get_template_directory_uri(); ?>/img/temp-index-level2014.png" alt="Level2014">
+			<a href="http://mangudeoo.ee/" target="_blank">
+				<img src="<?php echo get_template_directory_uri(); ?>/img/moo-event-banner.jpg" alt="MängudeÖÖ">
 			</a>
 		</div>
 	</div>

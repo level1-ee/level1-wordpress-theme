@@ -1,7 +1,11 @@
 <?php get_header(); ?>
 
 	<main class="main-content">
-
+		<div class="index-additions">
+			<div class="index-additions__item">
+				<a href="https://www.facebook.com/events/852798194808225/"><img src="<?php echo get_template_directory_uri() ?>/img/moo-suvi-2015-banner.png" alt="MängudeÖÖ"></a>
+			</div>
+		</div>
 <?php
 
 // check if the flexible content field has rows of data

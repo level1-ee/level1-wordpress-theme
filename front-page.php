@@ -2,14 +2,9 @@
 
 	<main class="main-content">
 		<div class="index-additions">
-			<div class="index-additions__item index-additions__item__player2">
+			<div class="index-additions__item">
 				<a href="https://www.facebook.com/events/104269879927256/" target="_blank">
-					<img src="<?php echo get_template_directory_uri(); ?>/img/moo-2015-sugis-banner.png" alt="Mängudeöö">
-				</a>
-			</div>
-			<div class="index-additions__item index-additions__item__2014">
-				<a href="https://www.facebook.com/events/819893161458441/" target="_blank">
-					<img src="<?php echo get_template_directory_uri(); ?>/img/manguang-banner.jpg" alt="Mängu äng">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/moo-event-banner.jpg" alt="Mängudeöö">
 				</a>
 			</div>
 		</div>
